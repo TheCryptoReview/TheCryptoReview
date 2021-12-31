@@ -7,8 +7,8 @@ app = Flask(__name__)
 def home():
   return render_template("index.html")
 
-@app.route("/about")
+@app.route("/dashboard.html")
 def about():
-  return render_template("about.html")
+  return render_template("dashboard.html")
     
 app.run(host='0.0.0.0', port=8080)
