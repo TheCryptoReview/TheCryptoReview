@@ -27,4 +27,3 @@ try:
 except (ConnectionError, Timeout, TooManyRedirects) as e:
   print(e)
 
-# market caps, percent changes over 24h-90d,
