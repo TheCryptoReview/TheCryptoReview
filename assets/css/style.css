@@ -8,9 +8,9 @@ html {
 }
 
 body {
-  background: #fff;
+  background: #1E283D;
   font: 400 12px/1.8 "Open Sans", sans-serif;
-  color: #666;
+  color: white;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -105,7 +105,7 @@ a,
 }
 
 .et-icons .box1 {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #1a1f32;
   display: block;
   width: 25%;
   float: left;
@@ -116,7 +116,7 @@ a,
 
 .et-icons .box1 > span {
   display: inline-block;
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid #1a1f32;
   min-width: 60px;
   min-height: 60px;
   text-align: center;
@@ -127,7 +127,7 @@ a,
 
 .fa-icons > div {
   padding: 0;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #1a1f32;
   margin: -1px 0 0 -1px;
   font-size: 13px;
 }
@@ -156,7 +156,7 @@ a,
 
 .main {
   position: relative;
-  background-color: #fff;
+  background-color: #232943;
   z-index: 1;
 }
 
@@ -221,9 +221,9 @@ a,
 }
 
 .side-image-text {
-  background: #fff;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  background: #2c3354;
+  border-top: 1px solid #1a1f32;
+  border-bottom: 1px solid #1a1f32;
   padding: 140px 60px 140px;
 }
 
@@ -244,11 +244,11 @@ a,
 .bg-dark-30 .alt-module-subtitle h5,
 .bg-dark-60 .alt-module-subtitle h5,
 .bg-dark-90 .alt-module-subtitle h5 {
-  color: #fff;
+  color: #232943;
 }
 
 .bg-dark {
-  background: #111;
+  background: black;
 }
 
 .bg-dark-30:before {
@@ -570,7 +570,7 @@ a,
 }
 
 .scroll-up a {
-  background: #fff;
+  background: #232943;
   display: block;
   height: 28px;
   width: 28px;
@@ -599,7 +599,7 @@ a,
 
 .video-controls-box a {
   display: inline-block;
-  color: #fff;
+  color: #232943;
   margin: 0 5px 0 0;
 }
 
@@ -615,7 +615,7 @@ a,
 }
 
 .landing-reason {
-  color: #fff;
+  color: #232943;
   font-size: 13px;
 }
 
@@ -674,52 +674,52 @@ a,
 
 .btn.btn-w {
   background: rgba(255, 255, 255, 0.8);
-  color: #111;
+  color: white;
 }
 
 .btn.btn-w:hover,
 .btn.btn-w:focus {
   background: white;
-  color: #111;
+  color: white;
 }
 
 .btn.btn-g {
-  background: #e5e5e5;
-  color: #111;
+  background: #1a1f32;
+  color: white;
 }
 
 .btn.btn-g:hover,
 .btn.btn-g:focus {
   background: #d8d8d8;
-  color: #111;
+  color: white;
 }
 
 .btn.btn-border-w {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.75);
-  color: #fff;
+  color: #232943;
 }
 
 .btn.btn-border-w:hover,
 .btn.btn-border-w:focus {
-  background: #fff;
+  background: #232943;
   border-color: transparent;
-  color: #111;
+  color: white;
 }
 
 .btn.btn-d {
   background: rgba(17, 17, 17, 0.8);
-  color: #fff;
+  color: #232943;
 }
 
 .btn.btn-d:hover,
 .btn.btn-d:focus {
-  background: #111111;
+  background: white111;
 }
 
 .btn.btn-b {
-  background: #111111;
-  color: #fff;
+  background: white111;
+  color: #232943;
 }
 
 .btn.btn-b:hover,
@@ -729,24 +729,24 @@ a,
 
 .btn-border-d {
   background: transparent;
-  border: 1px solid #111111;
-  color: #111;
+  border: 1px solid white111;
+  color: white;
 }
 
 .btn.btn-border-d:hover,
 .btn.btn-border-d:focus {
-  background: #111111;
-  color: #fff;
+  background: white111;
+  color: #232943;
 }
 
 .btn.btn-font-w {
   background: rgba(255, 255, 255, 0.8);
-  color: #fff;
+  color: #232943;
 }
 
 .btn.btn-font-w:hover {
-  background: #fff;
-  color: #111;
+  background: #232943;
+  color: white;
 }
 
 /* Buttons size */
@@ -797,17 +797,17 @@ a,
 /* Selection */
 ::-moz-selection {
   background: #000;
-  color: #fff;
+  color: #232943;
 }
 
 ::-webkit-selection {
   background: #000;
-  color: #fff;
+  color: #232943;
 }
 
 ::selection {
   background: #000;
-  color: #fff;
+  color: #232943;
 }
 
 /* Forms common style */
@@ -854,7 +854,7 @@ a,
 	Typography
 --------------------------------------------------------------*/
 a {
-  color: #111;
+  color: white;
 }
 
 a:hover, a:focus {
@@ -868,7 +868,7 @@ a:hover, a:focus {
 }
 
 .bg-dark a:hover, .bg-dark a:focus {
-  color: #fff;
+  color: #232943;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -912,14 +912,14 @@ blockquote {
   text-align: center;
   font-weight: 400;
   font-size: 30px;
-  color: #111;
+  color: white;
   margin: 0 0 70px;
 }
 
 .module-subtitle {
   text-align: center;
   font-size: 16px;
-  color: #111;
+  color: white;
   margin-bottom: 70px;
 }
 
@@ -942,12 +942,12 @@ blockquote {
   display: table-cell;
   white-space: pre;
   padding: 0 8px;
-  color: #111;
+  color: white;
 }
 
 /* Finance case study header */
 .finance-image-content {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #1a1f32;
   padding: 60px 0px;
 }
 
@@ -971,7 +971,7 @@ blockquote {
 
 .free-trial {
   background-color: rgba(88, 20, 158, 0.9);
-  color: #FFFFFF;
+  color: #232943FFF;
 }
 
 .free-trial .color-golden {
@@ -1040,7 +1040,7 @@ General Styles - FlexSlider
 
 .flex-control-nav > li > a {
   background: transparent;
-  border: 1px solid #fff;
+  border: 1px solid #232943;
   display: block;
   height: 6px;
   width: 6px;
@@ -1049,7 +1049,7 @@ General Styles - FlexSlider
 
 .flex-control-nav > li > a:hover,
 .flex-control-nav > li > a.flex-active {
-  background: #fff;
+  background: #232943;
 }
 
 /* -------------------------------------------------------------------
@@ -1151,7 +1151,7 @@ General Styles - Owlcarousel
 
 .owl-controls .owl-page span {
   background: transparent;
-  border: 1px solid #111;
+  border: 1px solid white;
   display: block;
   height: 6px;
   width: 6px;
@@ -1162,14 +1162,14 @@ General Styles - Owlcarousel
 
 .owl-controls .owl-page.active span,
 .owl-controls.clickable .owl-page:hover span {
-  background: #111;
+  background: white;
 }
 
 .owl-controls .owl-buttons > div {
   display: inline-block;
   margin: 5px;
   font-size: 14px;
-  color: #111;
+  color: white;
 }
 
 /*--------------------------------------------------------------
@@ -1187,7 +1187,7 @@ General Styles - Owlcarousel
 
 .loader {
   position: absolute;
-  border-left: 2px solid #ffffff;
+  border-left: 2px solid #232943fff;
   border-top: 2px solid rgba(255, 255, 255, 0.2);
   border-right: 2px solid rgba(255, 255, 255, 0.2);
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
@@ -1266,7 +1266,7 @@ General Styles - Owlcarousel
   letter-spacing: 4px;
   font-weight: 400;
   font-size: 22px;
-  color: #fff;
+  color: #232943;
 }
 
 .navbar-custom .nav li > a {
@@ -1304,7 +1304,7 @@ General Styles - Owlcarousel
 .navbar-custom .dropdown-menu > li > a:focus,
 .navbar-custom .dropdown-menu > li > a:hover {
   background: none;
-  color: #fff;
+  color: #232943;
 }
 
 .navbar-custom .dropdown-menu > li > a:hover {
@@ -1326,7 +1326,7 @@ General Styles - Owlcarousel
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
-  background: #fff;
+  background: #232943;
 }
 
 .dropdown-menu {
@@ -1370,7 +1370,7 @@ General Styles - Owlcarousel
 --------------------------------------------------------------*/
 .home-section {
   position: relative;
-  background-color: #fff;
+  background-color: #232943;
   background-repeat: no-repeat;
   background-position: center center;
   width: 100%;
@@ -1552,7 +1552,7 @@ Google map
 .alt-features-icon {
   line-height: 1.2;
   font-size: 42px;
-  color: #111;
+  color: white;
 }
 
 .features-title,
@@ -1561,7 +1561,7 @@ Google map
   letter-spacing: 2px;
   font-weight: 400;
   font-size: 14px;
-  color: #111;
+  color: white;
   margin: 16px 0 15px;
 }
 
@@ -1596,7 +1596,7 @@ Google map
 .content-box-title {
   font-weight: 400;
   font-size: 18px;
-  color: #111;
+  color: white;
   margin: 16px 0 15px;
 }
 
@@ -1657,7 +1657,7 @@ Google map
 }
 
 .team-social a:hover {
-  color: #FFF;
+  color: #232943;
 }
 
 .team-descr {
@@ -1666,7 +1666,7 @@ Google map
 
 .team-name {
   font-size: 14px;
-  color: #111;
+  color: white;
 }
 
 .team-role {
@@ -1690,7 +1690,7 @@ Google map
 	Restaurant Menu
 --------------------------------------------------------------*/
 .menu {
-  border-bottom: 1px dotted #e5e5e5;
+  border-bottom: 1px dotted #1a1f32;
   padding: 0 0 10px;
   margin: 0 0 20px;
 }
@@ -1699,7 +1699,7 @@ Google map
 .menu-price {
   margin: 0 0 10px;
   font-size: 14px;
-  color: #111;
+  color: white;
 }
 
 .menu-price-detail {
@@ -1711,7 +1711,7 @@ Google map
 	Price Table
 --------------------------------------------------------------*/
 .price-table {
-  background: #fff;
+  background: #232943;
   border: 1px solid #eaeaea;
   padding: 25px 20px;
   margin: 15px 0 30px;
@@ -1757,7 +1757,7 @@ Google map
 
 .borderline:after {
   position: absolute;
-  background: #fff;
+  background: #232943;
   content: "";
   bottom: -5px;
   left: 50%;
@@ -1771,13 +1771,13 @@ Google map
 }
 
 .price-table h4 {
-  color: #111;
+  color: white;
   margin: 0;
 }
 
 .price-table p.price {
   font-size: 60px;
-  color: #111;
+  color: white;
   padding: 0;
   margin: 0 0 0 -10px;
 }
@@ -1828,7 +1828,7 @@ Google map
 .video-box-icon > a > span {
   line-height: 1.8;
   font-size: 40px;
-  color: #fff;
+  color: #232943;
 }
 
 .video-title {
@@ -1935,7 +1935,7 @@ Google map
 
 .work-title {
   font-size: 14px;
-  color: #fff;
+  color: #232943;
   margin: 0 0 6px;
 }
 
@@ -1964,7 +1964,7 @@ Google map
 
 /* Work item white background*/
 .works-grid.works-hover-w .work-title {
-  color: #111;
+  color: white;
 }
 
 .works-grid.works-hover-w .work-item:hover .work-image:after {
@@ -1977,7 +1977,7 @@ Google map
 }
 
 .works-grid.works-hover-g .work-descr {
-  color: #fff;
+  color: #232943;
 }
 
 .works-grid.works-hover-g .work-item:hover .work-image:after {
@@ -1999,7 +1999,7 @@ Google map
 }
 
 .work-details-title {
-  color: #111;
+  color: white;
   margin: 0 0 20px;
 }
 
@@ -2025,7 +2025,7 @@ Google map
 .callout-title {
   font-weight: 400;
   font-size: 16px;
-  color: #fff;
+  color: #232943;
   margin: 0;
 }
 
@@ -2115,7 +2115,7 @@ Google map
   z-index: 2;
   text-align: center;
   font-size: 28px;
-  color: #fff;
+  color: #232943;
   padding: 20px;
 }
 
@@ -2156,7 +2156,7 @@ Google map
 .post-title {
   line-height: 1.4;
   font-size: 22px;
-  color: #111;
+  color: white;
   margin: 0;
 }
 
@@ -2256,7 +2256,7 @@ Google map
 }
 
 .progress-bar.pb-dark {
-  background: #111;
+  background: white;
 }
 
 .progress-bar span {
@@ -2267,7 +2267,7 @@ Google map
   opacity: 0;
   line-height: 12px;
   font-size: 12px;
-  color: #111;
+  color: white;
   padding: 4px 0px;
 }
 
@@ -2313,7 +2313,7 @@ Google map
 .table-border > tfoot > tr > th,
 .table-border > thead > tr > td,
 .table-border > thead > tr > th {
-  border-color: #e5e5e5;
+  border-color: #1a1f32;
 }
 
 .ds-table > tbody > tr > td,
@@ -2326,7 +2326,7 @@ Google map
 }
 
 .checkout-table {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #1a1f32;
 }
 
 .checkout-table > tbody > tr > td,
@@ -2340,10 +2340,10 @@ Google map
 
 .checkout-table tr td,
 .checkout-table tr th {
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
-  border-right: 1px solid #e5e5e5;
-  border-left: 1px solid #e5e5e5;
+  border-top: 1px solid #1a1f32;
+  border-bottom: 1px solid #1a1f32;
+  border-right: 1px solid #1a1f32;
+  border-left: 1px solid #1a1f32;
 }
 
 .checkout-table tbody tr td:first-child,
@@ -2357,7 +2357,7 @@ Google map
 }
 
 .sidebar .widget-title {
-  color: #111;
+  color: white;
 }
 
 .widget .widget-title {
@@ -2409,10 +2409,10 @@ Google map
 
 /* Tags */
 .tags a {
-  background: #111;
+  background: white;
   display: inline-block;
   font-size: 10px;
-  color: #fff;
+  color: #232943;
   padding: 4px 10px 4px 12px;
   margin: 0 1px 4px;
   border-radius: 2px;
@@ -2434,7 +2434,7 @@ Google map
 .comment-form .comment-form-title {
   border-bottom: 1px dotted #c2c2c2;
   font-size: 16px;
-  color: #111;
+  color: white;
   padding-bottom: 15px;
   margin: 0 0 20px;
 }
@@ -2525,7 +2525,7 @@ Google map
 .shop-item-title {
   font-weight: 400;
   font-size: 14px;
-  color: #111;
+  color: white;
   margin: 15px 0 5px;
 }
 
@@ -2576,7 +2576,7 @@ Google map
 
 .product-title {
   margin: 0 0 20px;
-  color: #111;
+  color: white;
 }
 
 .star,
@@ -2586,12 +2586,12 @@ Google map
 }
 
 .star-off {
-  color: #e5e5e5;
+  color: #1a1f32;
 }
 
 .amount {
   font-size: 32px;
-  color: #111;
+  color: white;
 }
 
 .reviews {
