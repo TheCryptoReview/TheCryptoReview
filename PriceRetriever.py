@@ -1,12 +1,13 @@
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
+
 import json
 
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 currency = 'USD'
 parameters = {
   'start':'1',
-  'limit':'1',
+  'limit':'5000',
   'convert': currency
 }
 headers = {
@@ -16,14 +17,22 @@ headers = {
 
 session = Session()
 session.headers.update(headers)
+ranks = []
 
-try:
-  response = session.get(url, params=parameters)
-  data = json.loads(response.text)
-  specificData = data['data'][0]['quote'][currency]
-  print(specificData['price'], specificData['percent_change_1h'], +specificData['percent_change_24h'], \
+response = session.get(url, params=parameters)
+data = json.loads(response.text)
+
+def headingGetter(coinName):
+  for i in range(5000):
+    name = data['data'][i]['name']
+    if coinName == name:
+      finalIndex = i
+      break
+
+  specificData = data['data'][finalIndex]['quote'][currency]
+
+  return specificData['price'], specificData['percent_change_1h'], +specificData['percent_change_24h'], \
         specificData['percent_change_7d'], specificData['percent_change_30d'], specificData['percent_change_60d'], \
-        specificData['percent_change_90d'], specificData['market_cap'])
-except (ConnectionError, Timeout, TooManyRedirects) as e:
-  print(e)
+        specificData['percent_change_90d'], specificData['market_cap']
+
 
