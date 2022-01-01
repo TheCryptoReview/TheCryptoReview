@@ -222,8 +222,8 @@ a,
 
 .side-image-text {
   background: #2c3354;
-  border-top: 1px solid #1a1f32;
-  border-bottom: 1px solid #1a1f32;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   padding: 140px 60px 140px;
 }
 
