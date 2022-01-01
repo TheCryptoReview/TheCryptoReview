@@ -200,6 +200,16 @@ a,
   width: 100%;
 }
 
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item .search-form input {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 0;
+    height: 24px;
+    padding: 0 0 0 20px;
+    position: relative;
+    transition: width 400ms ease, background 400ms ease;
+}
 /* Sections dividers */
 .divider-w {
   border-top: 1px solid #eaeaea;
@@ -812,6 +822,7 @@ a,
 
 /* Forms common style */
 .form-control {
+  color: white;
   font-family: "Roboto Condensed", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
