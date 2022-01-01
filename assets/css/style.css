@@ -697,7 +697,7 @@ a,
 .btn.btn-border-w {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.75);
-  color: #232943;
+  color: white;
 }
 
 .btn.btn-border-w:hover,
@@ -806,8 +806,8 @@ a,
 }
 
 ::selection {
-  background: #000;
-  color: #232943;
+  background: #E8E8E8  ;
+  color: #4f5b96;
 }
 
 /* Forms common style */
@@ -920,7 +920,7 @@ blockquote {
   text-align: center;
   font-size: 16px;
   color: white;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
 }
 
 .module-icon {
@@ -1127,6 +1127,7 @@ Photography Page Slider
 }
 
 .photography-page .image-caption .caption-text {
+  color: white;
   font-size: 24px;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -1239,7 +1240,7 @@ General Styles - Owlcarousel
 	Navbar
 --------------------------------------------------------------*/
 .navbar-custom {
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: #1a1f32;
   border: 0;
   border-radius: 0;
   z-index: 1000;
@@ -2256,7 +2257,7 @@ Google map
 }
 
 .progress-bar.pb-dark {
-  background: white;
+  background: #9ba3ca;
 }
 
 .progress-bar span {
