@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/index.html")
 def home():
-  return render_template("dashboard.html")
+  return render_template("dashboardBigGraph.html")
 
 # @app.route("/dashboard.html")
 # def about():
