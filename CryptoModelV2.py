@@ -2,28 +2,35 @@ import pandas_datareader as web
 import datetime as dt
 from prophet import Prophet
 
-def predictCrypto(ticker):
-    # Retrieve Data
-    crypto_currency = ticker.upper()
-    against_currency = 'USD'
+# import pandas as pd
+# import pandas_datareader as web
+# import datetime as dt
+# from prophet import Prophet
+# import matplotlib.pyplot as plt
 
-    start = dt.datetime(2016, 1, 1)
-    end = dt.datetime.now()
 
-    periods = 180
+# def predictCrypto(ticker):
+#     # Retrieve Data
+#     crypto_currency = ticker.upper()
+#     against_currency = 'USD'
 
-    df = web.DataReader(f'{crypto_currency}-{against_currency}', 'yahoo', start, end)
-    df['ds'] = df.index
-    df['y'] = df['Close']
+#     start = dt.datetime(2016, 1, 1)
+#     end = dt.datetime.now()
+
+#     periods = 180
+
+#     df = web.DataReader(f'{crypto_currency}-{against_currency}', 'yahoo', start, end)
+#     df['ds'] = df.index
+#     df['y'] = df['Close']
 
     m = Prophet()
     m.fit(df)
 
-    future = m.make_future_dataframe(periods=180)
-    future.tail(2)
+#     future = m.make_future_dataframe(periods=180)
+#     future.tail(2)
 
-    forecast = m.predict(future)
-    forecast.tail(2)
+#     forecast = m.predict(future)
+#     forecast.tail(2)
 
     # plt.figure(figsize=(15,5))
     # plt.title(crypto_currency + against_currency + ' price prediction')
@@ -38,8 +45,8 @@ def predictCrypto(ticker):
     #
     # plt.show()
 
-    predicted_data = forecast[len(df['Close']):len(forecast['yhat'])]
-    predicted_data.set_index(predicted_data['ds'], drop=True, append=False, inplace=True)
-    predicted_data = predicted_data[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
+#     predicted_data = forecast[len(df['Close']):len(forecast['yhat'])]
+#     predicted_data.set_index(predicted_data['ds'], drop=True, append=False, inplace=True)
+#     predicted_data = predicted_data[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
 
     return predicted_data.to_csv
