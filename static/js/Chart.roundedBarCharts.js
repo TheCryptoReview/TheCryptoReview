@@ -169,3 +169,9 @@ Chart.elements.Rectangle.prototype.draw = function() {
         ctx.stroke();
     }
 };
+
+$(function() {
+  $(".heart").on("click", function() {
+    $(this).toggleClass("is-active");
+  });
+});
