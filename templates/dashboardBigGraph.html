@@ -24,57 +24,76 @@
     <link rel="stylesheet" href="https://static.cryptohopper.com/widgets/assets/public/css/style.css">
     <style type="text/css">/* Chart.js */
 @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+
+
     </style>
     <link rel="stylesheet" href="https://static.cryptohopper.com/widgets/assets/public/css/style.css">
     <style type="text/css">/* Chart.js */
 @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+
+
     </style>
 </head>
 <body>
 <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
-      <div style='color:white'; class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-        <div class="me-3">
-          <a class="navbar-brand brand-logo" href="dashboard.html">
-            <img style='width:165px'; src="static/images/crlogo.png" alt="logo" />
-          </a>
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+        <div style='color:white' ;
+             class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+            <div class="me-3">
+                <a class="navbar-brand brand-logo" href="dashboard.html">
+                    <img style='width:165px' ; src="static/images/crlogo.png" alt="logo"/>
+                </a>
+            </div>
+            <div>
+                <a class="navbar-brand brand-logo-mini" href="dashboard.html">
+                    <img src="images/favicon.png" alt="logo"/>
+                </a>
+            </div>
         </div>
-        <div>
-          <a class="navbar-brand brand-logo-mini" href="dashboard.html">
-            <img src="images/favicon.png" alt="logo" />
-          </a>
-        </div>
-      </div>
-      <div style='padding-top:0px'; class="navbar-menu-wrapper d-flex align-items-top">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <br>
-            <form style='padding-top:24px;padding-right: 0px;min-width: 475px;' class="forms-sample" action="/dashboard.html" method="POST">
-               <div class="form-group">
-                 <input style='background: transparent;color:white'; type="text" class="form-control" name="coinName" id="coinName" placeholder="Search by coin name ie. bitcoin, ethereum">
+        <div style='padding-top:0px' ; class="navbar-menu-wrapper d-flex align-items-top">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <br>
+                    <form style='padding-top:24px;padding-right: 0px;min-width: 475px;' class="forms-sample"
+                          action="/dashboard.html" method="POST">
+                        <div class="form-group">
+                            <input style='background: transparent;color:white' ; type="text" class="form-control"
+                                   name="coinName" id="coinName"
+                                   placeholder="Search by coin name ie. bitcoin, ethereum">
+                        </div>
+                    </form>
+                </li>
+                <div style='padding-top:50px' ; class="navbar-menu-wrapper d-flex align-items-top">
+                    <ul style='padding-left: 0px;' class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                        </li>
+                        <li class="navbar-fixed-top"><a
+                                style='color:white;font-size: 18px;text-decoration:none;margin-right:12px' ;
+                                href="index.html">Home</a>
+                        <li class="navbar-fixed-top"><a
+                                style='color:white;font-size: 18px;text-decoration:none;margin-right:12px' ;
+                                href="dashboard.html">Dashboard</a>
+                        <li class="navbar-fixed-top"><a
+                                style='color:white;font-size: 18px;text-decoration:none;margin-right:12px' ;
+                                href="education.html">Education</a>
+                        <li class="navbar-fixed-top"><a
+                                style='color:white;font-size: 18px;text-decoration:none;margin-right:12px' ;
+                                href="about.html">About</a>
+                        </li>
                 </div>
-            </form>
-          </li>
-      <div style='padding-top:50px'; class="navbar-menu-wrapper d-flex align-items-top">
-        <ul style='padding-left: 0px;' class="navbar-nav ms-auto">
-          <li class="nav-item">
-          </li>
-              <li class="navbar-fixed-top"><a style='color:white;font-size: 18px;text-decoration:none;margin-right:12px'; href="index.html">Home</a>
-              <li class="navbar-fixed-top"><a style='color:white;font-size: 18px;text-decoration:none;margin-right:12px'; href="dashboard.html">Dashboard</a>
-              <li class="navbar-fixed-top"><a style='color:white;font-size: 18px;text-decoration:none;margin-right:12px'; href="education.html">Education</a>
-              <li class="navbar-fixed-top"><a style='color:white;font-size: 18px;text-decoration:none;margin-right:12px'; href="about.html">About</a>
+            </ul>
+            <li class="nav-item d-none d-lg-block">
+                <br>
+                <iframe style='padding-top: 3px;'
+                        src="https://free.timeanddate.com/clock/i84zkjsr/n822/fn17/fcfff/tc1e283d/pc1e283d/ftb/bas0/bat1/bacfff/pa8/tt0/tw1/th1/ta1/tb4"
+                        frameborder="0" width="221" height="51"></iframe>
             </li>
-          </div>
-        </ul>
-          <li class="nav-item d-none d-lg-block">
-            <br>
-            <iframe style='padding-top: 3px;' src="https://free.timeanddate.com/clock/i84zkjsr/n822/fn17/fcfff/tc1e283d/pc1e283d/ftb/bas0/bat1/bacfff/pa8/tt0/tw1/th1/ta1/tb4" frameborder="0" width="221" height="51"></iframe>
-          </li>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
-          <span class="mdi mdi-menu"></span>
-        </button>
-      </div>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-bs-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
@@ -299,7 +318,11 @@
                     <div class="col-sm-12">
                         <div class="home-tab">
                             <div class="d-sm-flex align-items-center justify-content-between border-bottom">
-                                <h1 style="color:white">{{ data.coin_name }} ({{ data.coin_ticker }})</h1>
+                                <h1 style="color:white" id="coinTitle">{{ data.coin_name }} ({{ data.coin_ticker }})</h1>
+                                <button style='background: #232943;border: none; display: flex;' type="button"
+                                        class="btn btn-info btn-rounded btn-icon" onclick="retrieveData()">
+                                    <i class="ti-star"></i>
+                                </button>
                             </div>
                             <div class="tab-content tab-content-basic">
                                 <div class="tab-pane fade show active" id="overview" role="tabpanel"
@@ -651,12 +674,58 @@
 			},
 		};
 
+
+
     </script>
     <script>
 		const myChart = new Chart(
 			document.getElementById('aiGraph'),
 			config
 		);
+
+
+
+    </script>
+
+    <script type="text/javascript">
+        function CheckBrowser(){
+            if (typeof(Storage) != "undefined"){
+                return true;
+            } else{
+                return false;
+            }
+        }
+
+        function retrieveData(){
+            console.log({{ name }})
+        }
+
+<!--        function saveCryptoCoin(){-->
+<!--            console.log({{ name }};-->
+<!--            if (CheckBrowser()) {-->
+<!--                let coinsSaved = localStorage.getItem('coinsSaved');-->
+<!--                if (coinsSaved != null) {-->
+<!--                    if (coinsSaved.length > 5) {-->
+<!--                        coinsSaved.pop();-->
+<!--                        coinsSaved.push(coinName);-->
+<!--                    }-->
+<!--                    else {-->
+<!--                        coinsSaved.push(coinName);-->
+<!--                    }-->
+<!--                }-->
+<!--                else {-->
+<!--                    coinsSaved = [coinName];-->
+<!--                }-->
+<!--                console.log(coinsSaved);-->
+<!--                alert(coinsSaved);-->
+<!--                localStorage.setItem('coinList', coinsSaved);-->
+<!--            }-->
+<!--            else {-->
+<!--                alert("Your browser does not support the latest HTML version. Please update and try again.")-->
+<!--            }-->
+<!--        }-->
+
+
 
     </script>
 

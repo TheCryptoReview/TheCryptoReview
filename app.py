@@ -12,7 +12,7 @@ global x_real, y_real, x_predicted, y_predicted
 def home():
     return render_template("index.html")
 
-@app.route("/dashboard.html", methods=['POST', 'GET'])
+@app.route("/dashboard.html", methods=['GET', 'POST'])
 def dashboard():
     if request.method == 'POST':
         coinName = request.form['coinName']
@@ -44,7 +44,7 @@ def dashboard():
                 'market_cap': market_cap
             }
 
-            return render_template("dashboardBigGraph.html", data=data)
+            return render_template("dashboardBigGraph.html", data=data, name=name)
         except:
             print("Error")
 
