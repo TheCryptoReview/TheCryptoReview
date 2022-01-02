@@ -8,11 +8,11 @@ global name, symbol, price, pchange_1h, pchange_24h, pchange_7d, pchange_30d, pc
 global x_real, y_real, x_predicted, y_predicted
 
 @app.route("/")
-@app.route("/index.html")
+@app.route("/index")
 def home():
     return render_template("index.html")
 
-@app.route("/dashboard.html", methods=['POST', 'GET'])
+@app.route("/dashboard", methods=['POST', 'GET'])
 def dashboard():
     if request.method == 'POST':
         coinName = request.form['coinName']
@@ -44,7 +44,7 @@ def dashboard():
                 'market_cap': market_cap
             }
 
-            return render_template("dashboardBigGraph.html", data=data)
+            return render_template("dashboardBigGraph.html", data=data, name=name)
         except:
             print("Error")
 
@@ -76,13 +76,14 @@ def dashboard():
     }
     return render_template("dashboardBigGraph.html", data=data)
 
-@app.route("/about.html")
+@app.route("/about")
 def about():
     return render_template("about.html")
 
-@app.route("/education.html")
+@app.route("/education")
 def education():
     return render_template("education.html")
 
 
-app.run(host='0.0.0.0', port=8080, debug=True)
+if __name__ == '__main__':
+  app.run()
