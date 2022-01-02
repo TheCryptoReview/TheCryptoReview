@@ -2,6 +2,7 @@ import pandas_datareader as web
 import datetime as dt
 from prophet import Prophet
 import numpy as np
+import matplotlib.pyplot as plt
 
 def formatTimeDataWithTime(x):
     x = np.array(x.to_pydatetime(), dtype=np.datetime64)
@@ -20,42 +21,46 @@ def predictCrypto(ticker, daysToPredict=180):
 
     periods = daysToPredict
 
-    df = web.DataReader(f'{crypto_currency}-{against_currency}', 'yahoo', start, end)
-    df['ds'] = df.index
-    df['y'] = df['Close']
+    try:
+        df = web.DataReader(f'{crypto_currency}-{against_currency}', 'yahoo', start, end)
+        df['ds'] = df.index
+        df['y'] = df['Close']
 
-    m = Prophet()
-    m.fit(df)
+        m = Prophet()
+        m.fit(df)
 
-    future = m.make_future_dataframe(periods=180)
-    future.tail(2)
+        future = m.make_future_dataframe(periods=daysToPredict)
+        future.tail(2)
 
-    forecast = m.predict(future)
-    forecast.tail(2)
+        forecast = m.predict(future)
+        forecast.tail(2)
 
-    # plt.figure(figsize=(15,5))
-    # plt.title(crypto_currency + against_currency + ' price prediction')
-    # plt.plot(df['ds'], df['Close'])
-    # plt.plot(forecast['ds'], forecast['yhat'], color='green')
-    # # plt.plot(forecast['ds'], forecast['yhat_lower'], alpha=0.1, color='blue')
-    # # plt.plot(forecast['ds'], forecast['yhat_upper'], alpha=0.1, color='blue')
-    # plt.legend('upper right')
-    #
-    # # plt.fill_between(forecast['ds'], forecast['yhat_upper'], forecast['yhat_lower'], alpha=0.1)
-    # # plt.plot(forecast['ds'], forecast['trend'])
-    #
-    # plt.show()
+        plt.figure(figsize=(15,5))
+        plt.title(crypto_currency + against_currency + ' price prediction')
+        plt.plot(df['ds'], df['Close'])
+        plt.plot(forecast['ds'], forecast['yhat'], color='green')
+        # plt.plot(forecast['ds'], forecast['yhat_lower'], alpha=0.1, color='blue')
+        # plt.plot(forecast['ds'], forecast['yhat_upper'], alpha=0.1, color='blue')
+        plt.legend('upper right')
 
-    predicted_data = forecast[len(df['Close']):len(forecast['yhat'])]
-    predicted_data.set_index(predicted_data['ds'], drop=True, append=False, inplace=True)
-    predicted_data = predicted_data[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
+        # plt.fill_between(forecast['ds'], forecast['yhat_upper'], forecast['yhat_lower'], alpha=0.1)
+        # plt.plot(forecast['ds'], forecast['trend'])
 
-    forecast.set_index(forecast['ds'], drop=True, append=False, inplace=True)
-    forecast = forecast[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
+        plt.show()
 
-    return formatTimeDataWithTime(df.index), (np.around(df['Close'].to_numpy(), 2)).tolist(), formatTimeDataWithTime(forecast.index), (np.around(forecast['yhat'].to_numpy(), 2)).tolist()
+        predicted_data = forecast[len(df['Close']):len(forecast['yhat'])]
+        predicted_data.set_index(predicted_data['ds'], drop=True, append=False, inplace=True)
+        predicted_data = predicted_data[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
 
-# x_real, y_real, x_predicted, y_predicted = predictCrypto("DASH", 180)
+        forecast.set_index(forecast['ds'], drop=True, append=False, inplace=True)
+        forecast = forecast[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
+        return formatTimeDataWithTime(df.index), df['Close'].to_numpy().tolist(), formatTimeDataWithTime(forecast.index), forecast['yhat'].to_numpy().tolist()
+
+    except:
+        print("Error!")
+        return None, None, None, None
+
+# x_real, y_real, x_predicted, y_predicted = predictCrypto("xlM", 180)
 # print(x_real)
 # print(y_real)
 # print(x_predicted)
