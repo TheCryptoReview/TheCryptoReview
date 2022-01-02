@@ -44,7 +44,7 @@ def dashboard():
                 'market_cap': market_cap
             }
 
-            return render_template("dashboardBigGraph.html", data=data)
+            return render_template("dashboardBigGraph.html", data=data, name=name)
         except:
             print("Error")
 
