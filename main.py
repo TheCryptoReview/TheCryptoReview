@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from CryptoModelV2 import formatTimeDataWithTime, predictCrypto
 from PriceRetriever import headingGetter as getCryptoData
-from PriceRetriever import roundCrypto, formatLargeNumber
+from PriceRetriever import roundCrypto, formatLargeNumber, roundCryptoWithoutDollar
 
 app = Flask(__name__)
 global name, symbol, price, pchange_1h, pchange_24h, pchange_7d, pchange_30d, pchange_60d, pchange_90d, market_cap
@@ -22,11 +22,11 @@ def dashboard():
 
             price = roundCrypto(price)
             pchange_1h = roundCrypto(pchange_1h)
-            pchange_24h = roundCrypto(pchange_24h)
-            pchange_7d = roundCrypto(pchange_7d)
-            pchange_30d = roundCrypto(pchange_30d)
-            pchange_60d = roundCrypto(pchange_60d)
-            pchange_90d = roundCrypto(pchange_90d)
+            pchange_24h = roundCryptoWithoutDollar(pchange_24h)
+            pchange_7d = roundCryptoWithoutDollar(pchange_7d)
+            pchange_30d = roundCryptoWithoutDollar(pchange_30d)
+            pchange_60d = roundCryptoWithoutDollar(pchange_60d)
+            pchange_90d = roundCryptoWithoutDollar(pchange_90d)
             market_cap = roundCrypto(market_cap)
 
             data = {
@@ -52,12 +52,12 @@ def dashboard():
     x_real, y_real, x_predicted, y_predicted = predictCrypto(symbol, daysToPredict=180)
 
     price = roundCrypto(price)
-    pchange_1h = roundCrypto(pchange_1h)
-    pchange_24h = roundCrypto(pchange_24h)
-    pchange_7d = roundCrypto(pchange_7d)
-    pchange_30d = roundCrypto(pchange_30d)
-    pchange_60d = roundCrypto(pchange_60d)
-    pchange_90d = roundCrypto(pchange_90d)
+    pchange_1h = roundCryptoWithoutDollar(pchange_1h)
+    pchange_24h = roundCryptoWithoutDollar(pchange_24h)
+    pchange_7d = roundCryptoWithoutDollar(pchange_7d)
+    pchange_30d = roundCryptoWithoutDollar(pchange_30d)
+    pchange_60d = roundCryptoWithoutDollar(pchange_60d)
+    pchange_90d = roundCryptoWithoutDollar(pchange_90d)
     market_cap = roundCrypto(market_cap)
 
     data = {

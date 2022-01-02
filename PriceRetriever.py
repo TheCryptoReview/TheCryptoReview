@@ -61,3 +61,21 @@ def roundCrypto(dec):
     else:
       return '$' + str(formatLargeNumber(round(dec, 2)))
   return 0
+
+def roundCryptoWithoutDollar(dec):
+  if dec < 0:
+    if dec == 0:
+      return '0%'
+    elif dec >= -0.01:
+      return '-0.01%'
+    else:
+      dec = float(formatLargeNumber(round(dec, 2)))
+      return str(dec)[:1]+str(dec)[1:]+'%'
+  else:
+    if dec == 0:
+      return '0%'
+    elif dec <= 0.01:
+      return '0.01%'
+    else:
+      return str(formatLargeNumber(round(dec, 2))) + '%'
+  return 0
