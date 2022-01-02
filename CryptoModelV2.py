@@ -2,7 +2,6 @@ import pandas_datareader as web
 import datetime as dt
 from prophet import Prophet
 import numpy as np
-import matplotlib.pyplot as plt
 
 def formatTimeDataWithTime(x):
     x = np.array(x.to_pydatetime(), dtype=np.datetime64)
@@ -54,10 +53,11 @@ def predictCrypto(ticker, daysToPredict=180):
     forecast.set_index(forecast['ds'], drop=True, append=False, inplace=True)
     forecast = forecast[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
 
-    return formatTimeDataWithTime(df.index), df['Close'].to_numpy().tolist(), formatTimeDataWithTime(forecast.index), forecast['yhat'].to_numpy().tolist()
+    return formatTimeDataWithTime(df.index), (np.around(df['Close'].to_numpy(), 2)).tolist(), formatTimeDataWithTime(forecast.index), (np.around(forecast['yhat'].to_numpy(), 2)).tolist()
 
-x_real, y_real, x_predicted, y_predicted = predictCrypto("IOTX", 180)
-print(x_real)
-print(y_real)
-print(x_predicted)
-print(y_predicted)
+# x_real, y_real, x_predicted, y_predicted = predictCrypto("DASH", 180)
+# print(x_real)
+# print(y_real)
+# print(x_predicted)
+# print(y_predicted)
+
