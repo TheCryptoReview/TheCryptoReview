@@ -34,18 +34,18 @@ def predictCrypto(ticker, daysToPredict=180):
     forecast = m.predict(future)
     forecast.tail(2)
 
-    plt.figure(figsize=(15,5))
-    plt.title(crypto_currency + against_currency + ' price prediction')
-    plt.plot(df['ds'], df['Close'])
-    plt.plot(forecast['ds'], forecast['yhat'], color='green')
-    # plt.plot(forecast['ds'], forecast['yhat_lower'], alpha=0.1, color='blue')
-    # plt.plot(forecast['ds'], forecast['yhat_upper'], alpha=0.1, color='blue')
-    plt.legend('upper right')
-
-    # plt.fill_between(forecast['ds'], forecast['yhat_upper'], forecast['yhat_lower'], alpha=0.1)
-    # plt.plot(forecast['ds'], forecast['trend'])
-
-    plt.show()
+    # plt.figure(figsize=(15,5))
+    # plt.title(crypto_currency + against_currency + ' price prediction')
+    # plt.plot(df['ds'], df['Close'])
+    # plt.plot(forecast['ds'], forecast['yhat'], color='green')
+    # # plt.plot(forecast['ds'], forecast['yhat_lower'], alpha=0.1, color='blue')
+    # # plt.plot(forecast['ds'], forecast['yhat_upper'], alpha=0.1, color='blue')
+    # plt.legend('upper right')
+    #
+    # # plt.fill_between(forecast['ds'], forecast['yhat_upper'], forecast['yhat_lower'], alpha=0.1)
+    # # plt.plot(forecast['ds'], forecast['trend'])
+    #
+    # plt.show()
 
     predicted_data = forecast[len(df['Close']):len(forecast['yhat'])]
     predicted_data.set_index(predicted_data['ds'], drop=True, append=False, inplace=True)
@@ -56,8 +56,8 @@ def predictCrypto(ticker, daysToPredict=180):
 
     return formatTimeDataWithTime(df.index), df['Close'].to_numpy().tolist(), formatTimeDataWithTime(forecast.index), forecast['yhat'].to_numpy().tolist()
 
-# x_real, y_real, x_predicted, y_predicted = predictCrypto("IOTX", 180)
-# print(x_real)
-# print(y_real)
-# print(x_predicted)
-# print(y_predicted)
+x_real, y_real, x_predicted, y_predicted = predictCrypto("IOTX", 180)
+print(x_real)
+print(y_real)
+print(x_predicted)
+print(y_predicted)
