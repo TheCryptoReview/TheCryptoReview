@@ -12,7 +12,11 @@ def home():
 }
 	# for x in range(180):
 	# 	data["historicalData"].append(0)
-	data["historicalData"] = data["historicalData"][-180:]
+	data["historicalData"] = data["historicalData"][-540:]
+	data["predictedData"] = data["predictedData"][-720:]
+	data["dates"] = data["dates"][-720:]
+	simpledata = {"price":"idk"}
+# 	data["historicalData"] = data["historicalData"][-180:]
 	return render_template("dashboardBigGraph.html", data=data)
 
 # @app.route("/dashboard.html")
