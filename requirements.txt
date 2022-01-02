@@ -9,7 +9,6 @@ statsmodels~=0.13.1
 scipy~=1.6.2
 requests~=2.25.1
 regex==2021.7.6
-tensorflow~=2.0.0
 sklearn~=0.0
 scikit-learn~=0.24.2
 prophet~=1.0.1
