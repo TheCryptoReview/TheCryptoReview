@@ -1,6 +1,19 @@
 /*--------------------------------------------------------------
 	Common
 --------------------------------------------------------------*/
+ul.mcw-news .mcw-n-content {
+    width: 100%;
+}
+.cryptoboxes * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul.mcw-news li {
+    color: white;
+    padding-bottom: 20px;
+    line-height: 1.5em;
+}
 html {
   overflow-y: scroll;
   overflow-x: hidden;
