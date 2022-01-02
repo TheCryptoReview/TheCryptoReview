@@ -74,7 +74,9 @@ def dashboard():
         'pchange_90d': pchange_90d,
         'market_cap': market_cap
     }
-
+    data["historical_data"] = data["historical_data"][-540:]
+	data["predicted_data"] = data["predicted_data"][-720:]
+	data["dates"] = data["dates"][-720:]
     return render_template("dashboardBigGraph.html", data=data)
 
 @app.route("/about.html")
