@@ -19235,10 +19235,14 @@ textarea:visited {
 .btn.focus,
 .ajax-upload-dragdrop .focus.ajax-file-upload,
 .swal2-modal .swal2-buttonswrapper .focus.swal2-styled,
-.btn:active.focus,
+.btn:active.focus,{
+    background: red;
+}
 .ajax-upload-dragdrop .ajax-file-upload:active.focus,
 .swal2-modal .swal2-buttonswrapper .swal2-styled:active.focus,
-.btn:active:focus,
+.btn:active:focus,{
+  background-color: red;
+}
 .ajax-upload-dragdrop .ajax-file-upload:active:focus,
 .swal2-modal .swal2-buttonswrapper .swal2-styled:active:focus, .btn:focus, .ajax-upload-dragdrop .ajax-file-upload:focus, .swal2-modal .swal2-buttonswrapper .swal2-styled:focus,
 button,
