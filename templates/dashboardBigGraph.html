@@ -392,8 +392,8 @@
                       <div class="col-sm-12">
                         <div class="statistics-details d-flex align-items-center justify-content-between">
                           <div>
-                            <p class="statistics-title">Bounce Rate</p>
-                            <h3 class="rate-percentage">32.53%</h3>
+                            <p class="statistics-title">Current Price USD</p>
+                            <h3 class="rate-percentage">{{ simpleData.price }}</h3>
                           </div>
                           <div>
                             <p class="statistics-title">Page Views</p>
@@ -696,7 +696,12 @@
 	<script>
 		// const responsive = true
 		const labels = {{data.dates |safe}};
+		var graphGradient2 = document.getElementById("aiGraph").getContext('2d');
 
+		var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
+		saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
+    saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
+		
 		const data = {
 			labels: labels,
 			datasets: [{
@@ -707,10 +712,23 @@
 				data: {{ data.historicalData }},
 			},{
 				label: 'Predicted Price',
-				backgroundColor: 'rgb(50,205,50)',
+				// backgroundColor: 'rgb(50,205,50)',
 				borderColor: 'rgb(50,205,50)',
-				fill: false,
+				// fill: false,
 				data: {{ data.predictedData }},
+				// label: '# of Votes',
+				// data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
+				backgroundColor: saleGradientBg2,
+				// borderColor: [
+				// 		'#52CDFF',
+				// ],
+				// borderWidth: 1.5,
+				// fill: true, // 3: no fill
+				// pointBorderWidth: 1,
+				// pointRadius: [0, 0, 0, 4, 0],
+				// pointHoverRadius: [0, 0, 0, 2, 0],
+				// pointBackgroundColor: ['#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)'],
+				// pointBorderColor: ['#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437',],
 			}]
 		};
 

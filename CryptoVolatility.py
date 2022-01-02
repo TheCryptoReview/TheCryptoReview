@@ -30,4 +30,4 @@ def getVolatility(ticker, pastDays):
         return volatilityInDollars
 
 
-getVolatility("BTC", 31)
+# getVolatility("BTC", 31)
