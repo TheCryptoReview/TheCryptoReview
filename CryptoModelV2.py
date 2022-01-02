@@ -1,15 +1,21 @@
 import pandas_datareader as web
 import datetime as dt
 from prophet import Prophet
-from matplotlib import pyplot as plt
 import numpy as np
 
-def formatTimeData(x):
+def formatTimeDataWithTime(x):
     x = np.array(x.to_pydatetime(), dtype=np.datetime64)
     x_list = []
     for i in x:
         x_list.append(str(i)[:-16])
     return x_list
+
+# def formatTimeData(x):
+#     x = np.array(x.to_pydatetime(), dtype=np.datetime64)
+#     x_list = []
+#     for i in x:
+#         x_list.append(str(i))
+#     return x_list
 
 def predictCrypto(ticker):
     # Retrieve Data
@@ -47,11 +53,14 @@ def predictCrypto(ticker):
     #
     # plt.show()
 
-    predicted_data = forecast[len(df['Close']):len(forecast['yhat'])]
-    predicted_data.set_index(predicted_data['ds'], drop=True, append=False, inplace=True)
-    predicted_data = predicted_data[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
+    # predicted_data = forecast[len(df['Close']):len(forecast['yhat'])]
+    # predicted_data.set_index(predicted_data['ds'], drop=True, append=False, inplace=True)
+    # predicted_data = predicted_data[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
 
-    return formatTimeData(df.index), df['Close'].to_numpy().tolist(), formatTimeData(predicted_data.index), predicted_data['yhat'].to_numpy().tolist()
+    forecast.set_index(forecast['ds'], drop=True, append=False, inplace=True)
+    forecast = forecast[['trend', 'yhat_lower', 'yhat_upper', 'yhat']]
+
+    return formatTimeDataWithTime(df.index), df['Close'].to_numpy().tolist(), formatTimeDataWithTime(forecast.index), forecast['yhat'].to_numpy().tolist()
 
 x_real, y_real, x_predicted, y_predicted = predictCrypto("BTC")
 print(x_real)
