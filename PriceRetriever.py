@@ -1,6 +1,7 @@
 from requests import Request, Session
 # from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
+import math
 
 global url
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
@@ -17,24 +18,46 @@ headers = {
 }
 
 def headingGetter(coinName):
-  session = Session()
-  session.headers.update(headers)
+  try:
+    session = Session()
+    session.headers.update(headers)
 
-  response = session.get(url, params=parameters)
-  data = json.loads(response.text)
+    response = session.get(url, params=parameters)
+    data = json.loads(response.text)
 
-  for i in range(5000):
-    name = data['data'][i]['name']
-    symbol = data['data'][i]['symbol']
-    if coinName.title() in name or coinName in name or coinName.upper() in symbol:
-      finalIndex = i
-      break
+    for i in range(5000):
+      name = data['data'][i]['name']
+      symbol = data['data'][i]['symbol']
+      if coinName.title() in name or coinName in name or coinName.upper() in symbol:
+        finalIndex = i
+        break
 
-  specificData = data['data'][finalIndex]['quote']['USD']
+    specificData = data['data'][finalIndex]['quote']['USD']
 
-  return symbol, specificData['price'], specificData['percent_change_1h'], +specificData['percent_change_24h'], \
-        specificData['percent_change_7d'], specificData['percent_change_30d'], specificData['percent_change_60d'], \
-        specificData['percent_change_90d'], specificData['market_cap']
+    return name, symbol, specificData['price'], specificData['percent_change_1h'], +specificData['percent_change_24h'], \
+          specificData['percent_change_7d'], specificData['percent_change_30d'], specificData['percent_change_60d'], \
+          specificData['percent_change_90d'], specificData['market_cap']
+  except:
+    print("Error")
+    return None, None, None, None, None, None, None, None, None, None
 
+def formatLargeNumber(num):
+  return "{:,}".format(num)
 
-
+def roundCrypto(dec):
+  if dec < 0:
+    if dec == 0:
+      return 0
+    elif dec >= -0.01:
+      return '-$0.01'
+    else:
+      dec = float(formatLargeNumber(round(dec, 2)))
+      return str(dec)[:1]+'$'+str(dec)[1:]
+  else:
+    if dec == 0:
+      return 0
+    elif dec <= 0.01:
+      return '$0.01'
+    else:
+      return '$' + str(formatLargeNumber(round(dec, 2)))
+  return 0
