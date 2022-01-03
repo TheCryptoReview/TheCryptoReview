@@ -370,6 +370,8 @@
                                                                 <h5 class="card-subtitle card-subtitle-dash">Interact
                                                                     with the AI model's predictions for the possible
                                                                     future prices of {{ data.coin_ticker }}</h5>
+								   <label for="myCheck">Shorten Data:</label> 
+								<input type="checkbox" id="myCheck" onclick="changeGraph()" checked>
                                                             </div>
                                                             <div>
                                                                 <canvas id="aiGraph"></canvas>
@@ -635,13 +637,15 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script>
 		// const responsive = true
+		const dateShort = {{data.dates |safe}}.slice(-720)
 		const labels = {{data.dates |safe}};
 		var graphGradient2 = document.getElementById("aiGraph").getContext('2d');
 
 		var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
 		saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
     saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
-
+		let historicalDataShort = {{ data.historical_data }}.slice(-540)
+		let predictedDataShort = {{ data.predicted_data }}.slice(-720)
 		const data = {
 			labels: labels,
 			datasets: [{
@@ -656,6 +660,36 @@
 				borderColor: 'rgb(50,205,50)',
 				// fill: false,
 				data: {{ data.predicted_data }},
+				// label: '# of Votes',
+				// data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
+				backgroundColor: saleGradientBg2,
+				// borderColor: [
+				// 		'#52CDFF',
+				// ],
+				// borderWidth: 1.5,
+				// fill: true, // 3: no fill
+				// pointBorderWidth: 1,
+				// pointRadius: [0, 0, 0, 4, 0],
+				// pointHoverRadius: [0, 0, 0, 2, 0],
+				// pointBackgroundColor: ['#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)'],
+				// pointBorderColor: ['#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437',],
+			}]
+		};
+
+		const dataShort = {
+			labels: dateShort,
+			datasets: [{
+				label: 'Historical Price',
+				backgroundColor: 'rgb(255, 99, 132)',
+				borderColor: 'rgb(255, 99, 132)',
+				fill: false,
+				data: predictedDataShort,
+			},{
+				label: 'Predicted Price',
+				// backgroundColor: 'rgb(50,205,50)',
+				borderColor: 'rgb(50,205,50)',
+				// fill: false,
+				data: historicalDataShort,
 				// label: '# of Votes',
 				// data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
 				backgroundColor: saleGradientBg2,
@@ -688,12 +722,38 @@
 				}
 			},
 		};
+		const configShort = {
+			type: 'line',
+			data: dataShort,
+			options: {
+				responsive: true,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Chart.js Line Chart'
+					}
+				}
+			},
+		};
 	</script>
 	<script>
 		const myChart = new Chart(
 			document.getElementById('aiGraph'),
-			config
+			configShort
 		);
+		function changeGraph() {
+			var checkBox = document.getElementById("myCheck");
+			if (checkBox.checked == true){
+				myChart.data = dataShort;
+				myChart.update();
+			} else {
+				myChart.data = data;
+				myChart.update();
+			}
+		}
 	</script>
 
     <script type="text/javascript">
