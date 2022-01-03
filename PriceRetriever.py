@@ -86,7 +86,7 @@ def priceGreed():
   session2 = Session()
   response2 = session2.get(url2)
   data2 = json.loads(response2.text)
-  return data2["data"][0]["value"]
+  return data2["data"][0]["value"],data2["data"][0]["value_classification"]
 
 
   
