@@ -8,11 +8,14 @@ global name, symbol, price, pchange_1h, pchange_24h, pchange_7d, pchange_30d, pc
 global x_real, y_real, x_predicted, y_predicted
 
 @app.route("/")
-@app.route("/index")
 def home():
     return render_template("index.html")
 
-@app.route("/dashboard", methods=['POST', 'GET'])
+@app.route("/index.html")
+def index():
+    return render_template("index.html")
+
+@app.route("/dashboard.html", methods=['POST', 'GET'])
 def dashboard():
     if request.method == 'POST':
         coinName = request.form['coinName']
@@ -49,11 +52,8 @@ def dashboard():
             print("Error")
 
     name, symbol, price, pchange_1h, pchange_24h, pchange_7d, pchange_30d, pchange_60d, pchange_90d, market_cap = getCryptoData("BTC")
-#     x_real, y_real, x_predicted, y_predicted = predictCrypto(symbol, daysToPredict=180)
-    x_real = []
-    y_real = []
-    x_predicted = []
-    y_predicted = []
+    x_real, y_real, x_predicted, y_predicted = predictCrypto(symbol, daysToPredict=180)
+
 
     price = roundCrypto(price)
     pchange_1h = roundCryptoWithoutDollar(pchange_1h)
@@ -80,11 +80,11 @@ def dashboard():
     }
     return render_template("dashboardBigGraph.html", data=data)
 
-@app.route("/about")
+@app.route("/about.html")
 def about():
     return render_template("about.html")
 
-@app.route("/education")
+@app.route("/education.html")
 def education():
     return render_template("education.html")
 
