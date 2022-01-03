@@ -30,7 +30,7 @@
     
         <link rel="icon"
           type="img/png"
-          href="images/favicon.png"
+          href="static/images/favicon.png"
      >
     <!--  
     Stylesheets
@@ -38,7 +38,7 @@
     
     -->
     <!-- Default stylesheets-->
-    <link href="static/assets/test/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets/test/bootstrap/dust/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template specific stylesheets-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
@@ -47,9 +47,9 @@
     <link href="static/assets/test/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="static/assets/test/et-line-font/et-line-font.css" rel="stylesheet">
     <link href="static/assets/test/flexslider/flexslider.css" rel="stylesheet">
-    <link href="static/assets/test/owl.carousel/dist/static/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="static/assets/test/owl.carousel/dist/static/assets/owl.theme.default.min.css" rel="stylesheet">
-    <link href="static/assets/test/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="static/assets/test/owl.carousel/dust/static/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="static/assets/test/owl.carousel/dust/static/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="static/assets/test/magnific-popup/dust/magnific-popup.css" rel="stylesheet">
     <link href="static/assets/test/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
     <!-- Main stylesheet and color file-->
     <link href="static/assets/css/style.css" rel="stylesheet">
@@ -60,8 +60,8 @@
       <div class="page-loader">
         <div class="loader">Loading...</div>
       </div>
-      <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
-        <div class="container">
+      <nav style='background: #1a1f32;padding-bottom: 0px;padding-top:5px'; class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
+        <div style='background: #1a1f32'; class="container">
           <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a style='color:white'; class="navbar-brand" href="index.html">The Crypto Review</a>
           </div>
@@ -71,12 +71,14 @@
           </li>
               <li class="navbar-fixed-top"><a style='color:white;font-weight: ;margin-right: ;right:5px'; href="index.html">Home</a>
               <li class="navbar-fixed-top"><a style='color:white;font-weight: ;margin-right:5px'; href="dashboard.html">Dashboard</a>
-              <li class="navbar-fixed-top"><a style='color:white;font-weight: ;margin-right:5px'; href="education.html">Education</a>
-              <li class="navbar-fixed-top"><a style='color:white;font-weight: ;margin-right:5px'; href="about.html">About</a>
-              <li class="navbar-fixed-top"><a class='hover' style='background: black;color:white;' href="login.html">Login</a>
+              <li class="navbar-fixed-top"><a style='color:white;font-weight: ;margin-right:5px'; href="static/education.html">Education</a>
+              <li class="navbar-fixed-top"><a style='color:white;font-weight: ;margin-right:5px'; href="static/about.html">About</a>
             </li>
           </div>
         </div>
+          <iframe style='padding-bottom:0px'; src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover=" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="44px" width="1550px" allowfullscreen></iframe>
+        </li>
+      </li>
       </nav>
       <section style='color:white'; class="home-section home-parallax home-fade home-full-height bg-dark-60 agency-page-header" id="home" data-background="static/assets/images/walls.png">
         <div style='color:white'; class="titan-caption">
@@ -123,14 +125,14 @@
         </section>
         <section class="module pt-0 pb-0" id="about">
           <div class="row position-relative m-0">
-            <div style='border-top: 1px solid white; border-bottom: 1px solid white;'; class="col-xs-12 col-md-6 side-image" data-background="static/images/ct.jpg"></div>
+            <div style='border-top: 1px solid white; border-bottom: 1px solid white;'; class="col-xs-12 col-md-6 side-image" data-background="static/assets/images/ct.jpg"></div>
             <div class="col-xs-12 col-md-6 col-md-offset-6 side-image-text">
               <div class="row">
                 <div class="col-sm-12">
                   <h2 class="module-title font-alt align-left">What is The Crypto Review</h2>
                   <div class="module-subtitle font-serif align-left" style='margin-bottom: -1px;'>“The blockchain is an incorruptible digital ledger of economic transactions that can be programmed to record not just financial transactions but virtually everything of value”</div>
                   <div style='padding-left:400px'; class="module-subtitle font-serif align-left">─ Don & Alex Tapscott</div>
-                  <p>In today's online world, gone are the wall street days when people traded static/assets in person; but the future has arrvied in the form of blockchain. To meet these demands, we created The Crypto Review, a free cryptocurrency visualizer that predictors, graphs, and reports currency information. Through powerful tools like machine learning, data visualization, and web-scraping, The Crypto Review provides insight into the future of the crypto market</p><a style='color:white'; class="btn btn-border-w btn-round" href="https://www.youtube.com/watch?v=uLsnCIcX-6Y">Learn More</a>
+                  <p>In today's online world, gone are the wall street days when people traded assets in person; but the future has arrvied in the form of blockchain. To meet these demands, we created The Crypto Review, a free cryptocurrency visualizer that predictors, graphs, and reports currency information. Through powerful tools like machine learning, data visualization, and web-scraping, The Crypto Review provides insight into the future of the crypto market</p><a style='color:white'; class="btn btn-border-w btn-round" href="https://www.youtube.com/watch?v=uLsnCIcX-6Y">Learn More</a>
                 </div>
               </div>
             </div>
@@ -173,7 +175,7 @@
             <div class="row">
               <div class="mb-sm-20 wow fadeInUp col-md-4 col-sm-6 col-xs-12" onclick="wow fadeInUp">
                 <div class="team-item">
-                  <div class="team-image"><img src="static/assets/images/team-1.jpg" alt="Member Photo"/>
+                  <div class="team-image"><img src="assets/images/team-1.jpg" alt="Member Photo"/>
                     <div class="team-detail">
                       <h5 class="font-alt">Hi all</h5>
                       <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
@@ -188,7 +190,7 @@
               </div>
               <div class="mb-sm-20 wow fadeInUp col-md-4 col-sm-6 col-xs-12" onclick="wow fadeInUp">
                 <div class="team-item">
-                  <div class="team-image"><img src="static/assets/images/team-2.jpg" alt="Member Photo"/>
+                  <div class="team-image"><img src="assets/images/team-2.jpg" alt="Member Photo"/>
                     <div class="team-detail">
                       <h5 class="font-alt">Good day</h5>
                       <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
@@ -203,7 +205,7 @@
               </div>
               <div class="mb-sm-20 wow fadeInUp col-md-4 col-sm-6 col-xs-12" onclick="wow fadeInUp">
                 <div class="team-item">
-                  <div class="team-image"><img src="static/assets/images/team-4.jpg" alt="Member Photo"/>
+                  <div class="team-image"><img src="assets/images/team-4.jpg" alt="Member Photo"/>
                     <div class="team-detail">
                       <h5 class="font-alt">Yes, it's me</h5>
                       <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
@@ -250,7 +252,7 @@
                       <h4 style='color:#1a1f32';  class="panel-title font-alt"><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#support3">How and where can I trade crypto safely?</a></h4>
                     </div>
                     <div class="panel-collapse collapse" id="support3">
-                      <div style='color:#232943'; class="panel-body">Our website The Crypto Review educates users on the importance of cryptocurrency as a financial system and also as a means to trade static/assets online. Furthermore, it is important to find a safe place to trade cryptocurrency. Popular apps include Coinbase, Gemini, SoFi, and Robinhood.
+                      <div style='color:#232943'; class="panel-body">Our website The Crypto Review educates users on the importance of cryptocurrency as a financial system and also as a means to trade assets online. Furthermore, it is important to find a safe place to trade cryptocurrency. Popular apps include Coinbase, Gemini, SoFi, and Robinhood.
                       </div>
                     </div>
                   </div>
@@ -305,7 +307,7 @@
                                 <div style='color:white'; class="count-item mb-sm-40">
                                     <div style='color:white'; class="count-icon"><span class="icon-target"></span></div>
                                     <h3 style='color:white'; class="count-to font-alt" data-countto="5000"></h3>
-                                    <h5 style='color:white'; class="count-title font-serif">Coins</h5>
+                                    <h5 style='color:white'; class="count-title font-serif">Total Coins</h5>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3 col-lg-3">
@@ -348,16 +350,16 @@
     JavaScripts
     =============================================
     -->
-    <script src="static/assets/test/jquery/dist/jquery.js"></script>
-    <script src="static/assets/test/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="static/assets/test/wow/dist/wow.js"></script>
-    <script src="static/assets/test/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
-    <script src="static/assets/test/isotope/dist/isotope.pkgd.js"></script>
+    <script src="static/assets/test/jquery/dust/jquery.js"></script>
+    <script src="static/assets/test/bootstrap/dust/js/bootstrap.min.js"></script>
+    <script src="static/assets/test/wow/dust/wow.js"></script>
+    <script src="static/assets/test/jquery.mb.ytplayer/dust/jquery.mb.YTPlayer.js"></script>
+    <script src="static/assets/test/isotope/dust/isotope.pkgd.js"></script>
     <script src="static/assets/test/imagesloaded/imagesloaded.pkgd.js"></script>
     <script src="static/assets/test/flexslider/jquery.flexslider.js"></script>
-    <script src="static/assets/test/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="static/assets/test/owl.carousel/dust/owl.carousel.min.js"></script>
     <script src="static/assets/test/smoothscroll.js"></script>
-    <script src="static/assets/test/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="static/assets/test/magnific-popup/dust/jquery.magnific-popup.js"></script>
     <script src="static/assets/test/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
     <script src="static/assets/js/plugins.js"></script>
     <script src="static/assets/js/main.js"></script>
