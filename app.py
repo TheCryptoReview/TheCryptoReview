@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from CryptoModelV2 import formatTimeDataWithTime, predictCrypto
 from PriceRetriever import headingGetter as getCryptoData
-from PriceRetriever import roundCrypto, formatLargeNumber, roundCryptoWithoutDollar
+from PriceRetriever import roundCrypto, formatLargeNumber, roundCryptoWithoutDollar, priceGreed
 
 app = Flask(__name__)
 global name, symbol, price, pchange_1h, pchange_24h, pchange_7d, pchange_30d, pchange_60d, pchange_90d, market_cap
@@ -54,6 +54,15 @@ def dashboard():
     name, symbol, price, pchange_1h, pchange_24h, pchange_7d, pchange_30d, pchange_60d, pchange_90d, market_cap = getCryptoData("BTC")
     x_real, y_real, x_predicted, y_predicted = predictCrypto(symbol, daysToPredict=180)
 
+    confidence = 0
+    preLast = y_predicted[len(y_predicted)-1]
+    realLast = y_real[len(y_real)-1]
+    if preLast <= realLast:
+        confidence = (1-((realLast-preLast)/realLast))*50
+    else:
+        confidence = (1-((realLast-preLast)/preLast))*50
+    confidence = round(confidence,1)
+    fearRating, emotion = priceGreed()
 
     price = roundCrypto(price)
     pchange_1h = roundCryptoWithoutDollar(pchange_1h)
