@@ -57,9 +57,12 @@ def dashboard():
     confidence = 0
     preLast = y_predicted[len(y_predicted)-1]
     realLast = y_real[len(y_real)-1]
-    confidence = (1-((realLast-preLast)/realLast))*50
+    if preLast <= realLast:
+        confidence = (1-((realLast-preLast)/realLast))*50
+    else:
+        confidence = (1-((realLast-preLast)/preLast))*50
     confidence = round(confidence,1)
-    fearRating = priceGreed()
+    fearRating, emotion = priceGreed()
 
     price = roundCrypto(price)
     pchange_1h = roundCryptoWithoutDollar(pchange_1h)
