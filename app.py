@@ -8,8 +8,11 @@ global name, symbol, price, pchange_1h, pchange_24h, pchange_7d, pchange_30d, pc
 global x_real, y_real, x_predicted, y_predicted
 
 @app.route("/")
-@app.route("/index")
 def home():
+    return render_template("index.html")
+
+@app.route("/index")
+def index():
     return render_template("index.html")
 
 @app.route("/dashboard", methods=['POST', 'GET'])
