@@ -14,7 +14,7 @@ parameters = {
 global headers
 headers = {
   'Accepts': 'application/json',
-  'X-CMC_PRO_API_KEY': config.api_key,
+  'X-CMC_PRO_API_KEY': 'b42a88f4-4a06-4f10-a665-12b9af4f8705',
 }
 
 def headingGetter(coinName):
