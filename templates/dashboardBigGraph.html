@@ -636,11 +636,16 @@
     <!-- endinject -->
     <!-- Custom js for this page-->
     <!-- <script src="static/js/dashboard.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"</script>
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
 		// const responsive = true
 		const labels = {{data.dates |safe}};
+		var graphGradient2 = document.getElementById("aiGraph").getContext('2d');
 
+		var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
+		saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
+    saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
+		
 		const data = {
 			labels: labels,
 			datasets: [{
@@ -651,10 +656,23 @@
 				data: {{ data.historical_data }},
 			},{
 				label: 'Predicted Price',
-				backgroundColor: 'rgb(50,205,50)',
+				// backgroundColor: 'rgb(50,205,50)',
 				borderColor: 'rgb(50,205,50)',
-				fill: false,
+				// fill: false,
 				data: {{ data.predicted_data }},
+				// label: '# of Votes',
+				// data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
+				backgroundColor: saleGradientBg2,
+				// borderColor: [
+				// 		'#52CDFF',
+				// ],
+				// borderWidth: 1.5,
+				// fill: true, // 3: no fill
+				// pointBorderWidth: 1,
+				// pointRadius: [0, 0, 0, 4, 0],
+				// pointHoverRadius: [0, 0, 0, 2, 0],
+				// pointBackgroundColor: ['#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)'],
+				// pointBorderColor: ['#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437',],
 			}]
 		};
 
@@ -674,19 +692,13 @@
 				}
 			},
 		};
-
-
-
-    </script>
-    <script>
+	</script>
+	<script>
 		const myChart = new Chart(
 			document.getElementById('aiGraph'),
 			config
 		);
-
-
-
-    </script>
+	</script>
 
     <script type="text/javascript">
         function CheckBrowser(){
@@ -700,31 +712,6 @@
         function retrieveData(){
             console.log({{ name }})
         }
-
-// <!--        function saveCryptoCoin(){-->
-// <!--            console.log({{ name }};-->
-// <!--            if (CheckBrowser()) {-->
-// <!--                let coinsSaved = localStorage.getItem('coinsSaved');-->
-// <!--                if (coinsSaved != null) {-->
-// <!--                    if (coinsSaved.length > 5) {-->
-// <!--                        coinsSaved.pop();-->
-// <!--                        coinsSaved.push(coinName);-->
-// <!--                    }-->
-// <!--                    else {-->
-// <!--                        coinsSaved.push(coinName);-->
-// <!--                    }-->
-// <!--                }-->
-// <!--                else {-->
-// <!--                    coinsSaved = [coinName];-->
-// <!--                }-->
-// <!--                console.log(coinsSaved);-->
-// <!--                alert(coinsSaved);-->
-// <!--                localStorage.setItem('coinList', coinsSaved);-->
-// <!--            }-->
-// <!--            else {-->
-// <!--                alert("Your browser does not support the latest HTML version. Please update and try again.")-->
-// <!--            }-->
-// <!--        }-->
 
 
 
