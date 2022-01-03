@@ -79,3 +79,14 @@ def roundCryptoWithoutDollar(dec):
     else:
       return str(formatLargeNumber(round(dec, 2))) + '%'
   return 0
+
+global url2
+url2 = 'https://api.alternative.me/fng/'
+def priceGreed():
+  session2 = Session()
+  response2 = session2.get(url2)
+  data2 = json.loads(response2.text)
+  return data2["data"][0]["value"]
+
+
+  

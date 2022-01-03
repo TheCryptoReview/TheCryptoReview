@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from CryptoModelV2 import formatTimeDataWithTime, predictCrypto
 from PriceRetriever import headingGetter as getCryptoData
-from PriceRetriever import roundCrypto, formatLargeNumber, roundCryptoWithoutDollar
+from PriceRetriever import roundCrypto, formatLargeNumber, roundCryptoWithoutDollar, priceGreed
 
 app = Flask(__name__)
 global name, symbol, price, pchange_1h, pchange_24h, pchange_7d, pchange_30d, pchange_60d, pchange_90d, market_cap
