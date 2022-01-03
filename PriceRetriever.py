@@ -1,5 +1,6 @@
 from requests import Request, Session
 import json
+import config
 import math
 
 global url
@@ -13,7 +14,7 @@ parameters = {
 global headers
 headers = {
   'Accepts': 'application/json',
-  'X-CMC_PRO_API_KEY': '750a42f1-b73e-44ff-926c-a9bf75806ce2',
+  'X-CMC_PRO_API_KEY': config.api_key,
 }
 
 def headingGetter(coinName):
