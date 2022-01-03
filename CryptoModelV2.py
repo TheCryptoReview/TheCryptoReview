@@ -1,9 +1,8 @@
 import pandas_datareader as web
 import datetime as dt
-# from prophet import Prophet
-from fbprophet import Prophet
+from prophet import Prophet
+# from fbprophet import Prophet
 import numpy as np
-import matplotlib.pyplot as plt
 
 def formatTimeDataWithTime(x):
     x = np.array(x.to_pydatetime(), dtype=np.datetime64)

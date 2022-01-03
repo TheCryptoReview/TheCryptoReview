@@ -11,11 +11,11 @@ global x_real, y_real, x_predicted, y_predicted
 def home():
     return render_template("index.html")
 
-@app.route("/index")
+@app.route("/index.html")
 def index():
     return render_template("index.html")
 
-@app.route("/dashboard", methods=['POST', 'GET'])
+@app.route("/dashboard.html", methods=['POST', 'GET'])
 def dashboard():
     if request.method == 'POST':
         coinName = request.form['coinName']
@@ -79,11 +79,11 @@ def dashboard():
     }
     return render_template("dashboardBigGraph.html", data=data)
 
-@app.route("/about")
+@app.route("/about.html")
 def about():
     return render_template("about.html")
 
-@app.route("/education")
+@app.route("/education.html")
 def education():
     return render_template("education.html")
 
