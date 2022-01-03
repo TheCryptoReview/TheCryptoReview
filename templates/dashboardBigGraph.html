@@ -757,7 +757,17 @@
             }
         }
 
+        function createWatchList() {
+            if (CheckBrowser()) {
+                let coinsSaved = JSON.parse(localStorage.getItem('coinList'));
+                if (coinsSaved != null) {
+                    for (let i = 0; i < coinsSaved.length; i++) {
+                        // add by document get element by id with i as a part of id, e.g. watchlist_row_1 --> watchlist_row_+i.toString()
 
+                    }
+                }
+            }
+        }
 
 
     </script>
