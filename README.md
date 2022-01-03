@@ -1,7 +1,7 @@
 # The Crypto Review
 
 ## Introduction
-Welcome to our project, TheCryptoReview, created for the STEM Warriors Hackathon! For easy access, check out our site publicly hosted on Heroku here: https://the-crypto-review.herokuapp.com/index.html. To view our website locally, download the repository, then run pip install -r requirements.txt, and finally run the app.py file. For more information on how our project works, check out our YouTube video describing it linked here: [INSERT LINK].
+Welcome to our project, TheCryptoReview, created for the STEM Warriors Hackathon! For easy access, check out our site publicly hosted on Heroku here: https://the-crypto-review.herokuapp.com/index.html. To view our website locally, download the repository, then run pip install -r requirements.txt, and finally run the app.py file. For more information on how our project works, check out our YouTube video describing it linked here: https://youtu.be/-nMBC2CprGU.
 
 ## Inspiration
 One of our teammates Anuj was heavily interested in blockchain and cryptocurrency with its increasing popularity in the news, even amongst big tech CEOs like Elon Musk, who is a role model and inspiration for all of our team. However, without much experience in the complicated topic of cryptocurrency, Anuj found himself heavily intimidated by the complexity of cryptocurrency data and how to trade based on it. Thus, we created The Crypto Review to help fellow cryptocurrency novices find a simpler introduction to the field of cryptocurrency investing and trade safely.
