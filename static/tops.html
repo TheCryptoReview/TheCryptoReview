@@ -237,174 +237,126 @@
           <iframe src="https://widget.coinlib.io/widget?type=full_v2&theme=dark&cnt=100&pref_coin_id=1505&graph=yes" style="min-height: 637px; border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="637" width="290px" allowfullscreen></iframe></nav>
       <!-- partial -->
       <div class="main-panel">
-        <div style='padding-left: 50px;padding-bottom: 0px'; class="content-wrapper">
-          <div class="row">
+        <div style='padding-left: 30px;padding-bottom: 0px'; class="content-wrapper">
+<div class="row">
             <div class="col-sm-12">
               <div class="home-tab">
                 <div class="tab-content tab-content-basic">
                   <div class="">
-                    <h1 style='padding-top: 0px;color:white'; class="welcome-text">Top Cryptos</h1>
+                    <h1 style='padding-top: 0px;color:white;font-size: 30px'; class="welcome-text">Top Cryptos</h1>
                     <br>
                   </div>
                   <div class="card">
-                    <div class="card-body">
-                      <h4 class="card-title">Striped Table</h4>
-                      <p class="card-description">
-                        Add class <code>.table-striped</code>
-                      </p>
+                    <div style='min-height:35px'; class="card-body">
+                      <h4 class="card-title">Pinned Cryptocurrencies</h4>
                       <div class="table-responsive">
                         <table class="table table-striped">
                           <thead>
                             <tr>
                               <th>
-                                User
+                                Symbol
                               </th>
                               <th>
-                                First name
+                                Name
                               </th>
                               <th>
-                                Progress
+                                View (24h)
                               </th>
                               <th>
-                                Amount
-                              </th>
-                              <th>
-                                Deadline
+                                Toggle
                               </th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td class="py-1">
-                                <img src="../../images/faces/face1.jpg" alt="image">
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
                               </td>
-                              <td>
+                              <td id="watchlist_name_1" >
                                 Herman Beck
                               </td>
                               <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
                               </td>
-                              <td>
-                                $ 77.99
-                              </td>
-                              <td>
-                                May 15, 2015
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="py-1">
-                                <img src="../../images/faces/face2.jpg" alt="image">
-                              </td>
-                              <td>
-                                Messsy Adam
-                              </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td>
-                                $245.30
-                              </td>
-                              <td>
-                                July 1, 2015
+                              <td id="watchlist_volatility_1">
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Star/Unstar</i>
+                                </button>                              
                               </td>
                             </tr>
                             <tr>
-                              <td class="py-1">
-                                <img src="../../images/faces/face3.jpg" alt="image">
+                            <tr>
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
+                              </td>
+                              <td id="watchlist_name_1" >
+                                Herman Beck
                               </td>
                               <td>
-                                John Richards
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
                               </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td>
-                                $138.00
-                              </td>
-                              <td>
-                                Apr 12, 2015
+                              <td id="watchlist_volatility_1">
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Star/Unstar</i>
+                                </button>                              
                               </td>
                             </tr>
                             <tr>
-                              <td class="py-1">
-                                <img src="../../images/faces/face4.jpg" alt="image">
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
+                              </td>
+                              <td id="watchlist_name_1" >
+                                Herman Beck
                               </td>
                               <td>
-                                Peter Meggik
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
                               </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td>
-                                $ 77.99
-                              </td>
-                              <td>
-                                May 15, 2015
+                              <td id="watchlist_volatility_1">
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Star/Unstar</i>
+                                </button>                              
                               </td>
                             </tr>
                             <tr>
-                              <td class="py-1">
-                                <img src="../../images/faces/face5.jpg" alt="image">
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
+                              </td>
+                              <td id="watchlist_name_1" >
+                                Herman Beck
                               </td>
                               <td>
-                                Edward
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
                               </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td>
-                                $ 160.25
-                              </td>
-                              <td>
-                                May 03, 2015
+                              <td id="watchlist_volatility_1">
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Star/Unstar</i>
+                                </button>                              
                               </td>
                             </tr>
                             <tr>
-                              <td class="py-1">
-                                <img src="../../images/faces/face6.jpg" alt="image">
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
+                              </td>
+                              <td id="watchlist_name_1" >
+                                Herman Beck
                               </td>
                               <td>
-                                John Doe
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
                               </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td>
-                                $ 123.21
-                              </td>
-                              <td>
-                                April 05, 2015
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="py-1">
-                                <img src="../../images/faces/face7.jpg" alt="image">
-                              </td>
-                              <td>
-                                Henry Tom
-                              </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td>
-                                $ 150.00
-                              </td>
-                              <td>
-                                June 16, 2015
+                              <td id="watchlist_volatility_1">
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Star/Unstar</i>
+                                </button>                              
                               </td>
                             </tr>
                           </tbody>
@@ -418,6 +370,113 @@
           </div>
         </div>
     </div>
+      <div class="main-panel">
+        <div style='padding-left: 0px;padding-bottom: 0px'; class="content-wrapper">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="home-tab">
+                <div class="tab-content tab-content-basic">
+                  <div class="">
+                    <h1 style='padding-top: 0px;color:white;font-size: 30px'; class="welcome-text">Top Cryptos</h1>
+                    <br>
+                  </div>
+                  <div class="card">
+                    <div style='min-height:35px'; class="card-body">
+                      <h4 class="card-title">Pinned Cryptocurrencies</h4>
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>
+                                Symbol
+                              </th>
+                              <th>
+                                Name
+                              </th>
+                              <th>
+                                View (24h)
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
+                              </td>
+                              <td id="watchlist_name_1" >
+                                Herman Beck
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
+                              </td>
+                            </tr>
+                            <tr>
+                            <tr>
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
+                              </td>
+                              <td id="watchlist_name_1" >
+                                Herman Beck
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
+                              </td>
+                            </tr>
+                            <tr>
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
+                              </td>
+                              <td id="watchlist_name_1" >
+                                Herman Beck
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
+                              </td>
+                            </tr>
+                            <tr>
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
+                              </td>
+                              <td id="watchlist_name_1" >
+                                Herman Beck
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
+                              </td>
+                            </tr>
+                            <tr>
+                              <td id='watchlist_symbol_1' class="py-1">
+                                symbol
+                              </td>
+                              <td id="watchlist_name_1" >
+                                Herman Beck
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Dashboard</i>
+                                </button>  
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->

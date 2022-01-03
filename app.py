@@ -84,7 +84,7 @@ def dashboard():
         'pchange_90d': pchange_90d,
         'market_cap': market_cap
     }
-    return render_template("dashboardBigGraph.html", data=data)
+    return render_template("dashboardBigGraph.html", data=data, name=name)
 
 @app.route("/about.html")
 def about():
