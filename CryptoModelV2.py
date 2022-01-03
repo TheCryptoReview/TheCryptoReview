@@ -1,6 +1,6 @@
 import pandas_datareader as web
 import datetime as dt
-from fbprophet import Prophet
+from prophet import Prophet
 import numpy as np
 
 def formatTimeDataWithTime(x):

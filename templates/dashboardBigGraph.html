@@ -34,10 +34,16 @@
 
 
 
+
+
+
     </style>
     <link rel="stylesheet" href="https://static.cryptohopper.com/widgets/assets/public/css/style.css">
     <style type="text/css">/* Chart.js */
 @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+
+
+
 
 
 
@@ -300,8 +306,8 @@
                 <br>
             </div>
             <iframe src="https://widget.coinlib.io/widget?type=full_v2&theme=dark&cnt=100&pref_coin_id=1505&graph=yes"
-                    style="min-height: 1516px; border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1"
-                    marginheight="0px" marginwidth="0px" height="1211px" width="320px" allowfullscreen></iframe>
+                    style="min-height: 1400px; border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1"
+                    marginheight="0px" marginwidth="0px" height="1400px" width="320px" allowfullscreen></iframe>
         </nav>
         <!-- partial -->
         <div class="main-panel">
@@ -353,12 +359,21 @@
                                                 <div class="">
                                                     <div class="card card-rounded">
                                                         <div class="card-body">
+                                                            <div class="">
+                                                                <h1 style='padding-top: 0px;color:black;font-size: 17px'
+                                                                    ; class="welcome-text">Fear Rating: {{ fg }} |
+                                                                    Confidence: {{ cr }}</h1>
+                                                                <br>
+                                                            </div>
                                                             <div>
                                                                 <h4 class="card-title card-title-dash">Predicted and
                                                                     Historical {{ data.coin_ticker }} Price Data</h4>
                                                                 <h5 class="card-subtitle card-subtitle-dash">Interact
                                                                     with the AI model's predictions for the possible
                                                                     future prices of {{ data.coin_ticker }}</h5>
+                                                                <label for="myCheck">Shorten Data:</label>
+                                                                <input type="checkbox" id="myCheck"
+                                                                       onclick="changeGraph()" checked>
                                                             </div>
                                                             <div>
                                                                 <canvas id="aiGraph"></canvas>
@@ -374,7 +389,7 @@
                                         <div class="main-panel">
                                             <div style='padding-left: 0px;padding-bottom: 0px' ;
                                                  class="content-wrapper">
-                                                <div class="col" style="padding-right:250px">
+                                                <div class="col">
                                                     <div class="col-sm-12">
                                                         <div class="home-tab">
                                                             <div class="tab-content tab-content-basic">
@@ -384,13 +399,16 @@
                                                                     <br>
                                                                 </div>
                                                                 <div class="card">
-                                                                    <div style='min-height:35px' ; class="card-body">
+                                                                    <div style='min-height:35px' class="card-body">
                                                                         <h4 class="card-title">Pinned
                                                                             Cryptocurrencies</h4>
                                                                         <div class="table-responsive">
                                                                             <table class="table table-striped">
                                                                                 <thead>
                                                                                 <tr>
+                                                                                    <th>
+                                                                                        Symbol
+                                                                                    </th>
                                                                                     <th>
                                                                                         Name
                                                                                     </th>
@@ -401,69 +419,71 @@
                                                                                 </thead>
                                                                                 <tbody>
                                                                                 <tr>
+                                                                                    <td>
+                                                                                        BTC
+                                                                                    </td>
                                                                                     <td id="watchlist_name_1">
                                                                                         Bitcoin
                                                                                     </td>
                                                                                     <td>
-                                                                                        <form action="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Bitcoin">
-                                                                                            <button type="submit"
-                                                                                                    class="btn btn-info btn-rounded btn-icon">
-                                                                                                <i class="ti-star">Dashboard</i>
-                                                                                            </button>
-                                                                                        </form>
+                                                                                        <a class="btn btn-info btn-rounded btn-icon"
+                                                                                           style="font-size: 17px; background: #232943; border-radius: 15px;"
+                                                                                           href="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Bitcoin">Dashboard</a>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                 <tr>
+                                                                                    <td>
+                                                                                        ETH
+                                                                                    </td>
                                                                                     <td id="watchlist_name_2">
                                                                                         Ethereum
                                                                                     </td>
                                                                                     <td>
-                                                                                        <form action="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Ethereum">
-                                                                                            <button type="submit"
-                                                                                                    class="btn btn-info btn-rounded btn-icon">
-                                                                                                <i class="ti-star">Dashboard</i>
-                                                                                            </button>
-                                                                                        </form>
+                                                                                        <a class="btn btn-info btn-rounded btn-icon"
+                                                                                           style="font-size: 17px; background: #232943; border-radius: 15px;"
+                                                                                           href="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Ethereum">Dashboard</a>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td id="watchlist_name_3">
+                                                                                    <td style="background: #F2F2F2">
+                                                                                        BNB
+                                                                                    </td>
+                                                                                    <td id="watchlist_name_3"
+                                                                                        style="background: #F2F2F2">
                                                                                         Binance Coin
                                                                                     </td>
-                                                                                    <td>
-                                                                                        <form action="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Binance">
-                                                                                            <button type="submit"
-                                                                                                    class="btn btn-info btn-rounded btn-icon">
-                                                                                                <i class="ti-star">Dashboard</i>
-                                                                                            </button>
-                                                                                        </form>
+                                                                                    <td style="background: #F2F2F2">
+                                                                                        <a class="btn btn-info btn-rounded btn-icon"
+                                                                                           style="font-size: 17px; background: #232943; border-radius: 15px;"
+                                                                                           href="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Binance">Dashboard</a>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
+                                                                                    <td>
+                                                                                        ADA
+                                                                                    </td>
                                                                                     <td id="watchlist_name_4">
                                                                                         Cardano
                                                                                     </td>
                                                                                     <td>
-                                                                                        <form action="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Cardano">
-                                                                                            <button type="submit"
-                                                                                                    class="btn btn-info btn-rounded btn-icon">
-                                                                                                <i class="ti-star">Dashboard</i>
-                                                                                            </button>
-                                                                                        </form>
+                                                                                        <a class="btn btn-info btn-rounded btn-icon"
+                                                                                           style="font-size: 17px; background: #232943; border-radius: 15px;"
+                                                                                           href="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Cardano">Dashboard</a>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td id="watchlist_name_5">
+                                                                                    <td style="background: #F2F2F2">
+                                                                                        LUNA
+                                                                                    </td>
+                                                                                    <td id="watchlist_name_5"
+                                                                                        style="background: #F2F2F2">
                                                                                         Terra
                                                                                     </td>
-                                                                                    <td>
-                                                                                        <form action="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Terra">
-                                                                                            <button type="submit"
-                                                                                                    class="btn btn-info btn-rounded btn-icon">
-                                                                                                <i class="ti-star">Dashboard</i>
-                                                                                            </button>
-                                                                                        </form>
+                                                                                    <td style="background: #F2F2F2">
+                                                                                        <a class="btn btn-info btn-rounded btn-icon"
+                                                                                           style="font-size: 17px; background: #232943; border-radius: 15px;"
+                                                                                           href="https://the-crypto-review-usa.herokuapp.com/dashboard.html?token=Terra">Dashboard</a>
                                                                                     </td>
                                                                                 </tr>
                                                                                 </tbody>
@@ -474,258 +494,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6 col-lg-12 grid-margin stretch-card">
-                                                        <div class="card card-rounded">
-                                                            <div class="card-body">
-                                                                <div class="row">
-                                                                    <div class="col-sm-6">
-                                                                        <div class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
-                                                                            <div class="circle-progress-width">
-                                                                                <div id="totalVisitors"
-                                                                                     class="progressbar-js-circle pr-2"></div>
-                                                                            </div>
-                                                                            <div>
-                                                                                <p class="text-small mb-2">Fear and
-                                                                                    Greed Index</p>
-                                                                                <h4 class="mb-0 fw-bold">{{fg}}</h4>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <div class="d-flex justify-content-between align-items-center">
-                                                                            <div class="circle-progress-width">
-                                                                                <div id="visitperday"
-                                                                                     class="progressbar-js-circle pr-2"></div>
-                                                                            </div>
-                                                                            <div>
-                                                                                <p class="text-small mb-2">Confidence
-                                                                                    Rating</p>
-                                                                                <h4 class="mb-0 fw-bold">{{cr}}</h4>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- <div class="row">
-                                                          <div class="d-flex flex-column">
-                                                            <div class="row flex-grow">
-                                                              <div class="col-12 grid-margin stretch-card">
-                                                                <div class="card card-rounded">
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                            <div class="row flex-grow">
-                                                              <div class="grid-margin stretch-card">
-                                                                <div class="card card-rounded">
-                                                                  <div class="card-body">
-                                                                    <div class="d-sm-flex justify-content-between align-items-start">
-                                                                      <div>
-                                                                        <h4 class="card-title card-title-dash">Pending Requests</h4>
-                                                                       <p class="card-subtitle card-subtitle-dash">You have 50+ new requests</p>
-                                                                      </div>
-                                                                      <div>
-                                                                        <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new member</button>
-                                                                      </div>
-                                                                    </div>
-                                                                    <div class="table-responsive  mt-1">
-                                                                      <table class="table select-table">
-                                                                        <thead>
-                                                                          <tr>
-                                                                            <th>
-                                                                              <div class="form-check form-check-flat mt-0">
-                                                                                <label class="form-check-label">
-                                                                                  <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i><i class="input-helper"></i><i class="input-helper"></i></label>
-                                                                              </div>
-                                                                            </th>
-                                                                            <th>Customer</th>
-                                                                            <th>Company</th>
-                                                                            <th>Progress</th>
-                                                                            <th>Status</th>
-                                                                          </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                          <tr>
-                                                                            <td>
-                                                                              <div class="form-check form-check-flat mt-0">
-                                                                                <label class="form-check-label">
-                                                                                <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i><i class="input-helper"></i><i class="input-helper"></i></label>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div class="d-flex ">
-                                                                                <img src="static/images/faces/face1.jpg" alt="">
-                                                                                <div>
-                                                                                  <h6>Brandon Washington</h6>
-                                                                                  <p>Head admin</p>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <h6>Company name 1</h6>
-                                                                              <p>company type</p>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div>
-                                                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                  <p class="text-success">79%</p>
-                                                                                  <p>85/162</p>
-                                                                                </div>
-                                                                                <div class="progress progress-md">
-                                                                                  <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td><div class="badge badge-opacity-warning">In progress</div></td>
-                                                                          </tr>
-                                                                          <tr>
-                                                                            <td>
-                                                                              <div class="form-check form-check-flat mt-0">
-                                                                                <label class="form-check-label">
-                                                                                <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i><i class="input-helper"></i><i class="input-helper"></i></label>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div class="d-flex">
-                                                                                <img src="static/images/faces/face2.jpg" alt="">
-                                                                                <div>
-                                                                                  <h6>Laura Brooks</h6>
-                                                                                  <p>Head admin</p>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <h6>Company name 1</h6>
-                                                                              <p>company type</p>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div>
-                                                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                  <p class="text-success">65%</p>
-                                                                                  <p>85/162</p>
-                                                                                </div>
-                                                                                <div class="progress progress-md">
-                                                                                  <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td><div class="badge badge-opacity-warning">In progress</div></td>
-                                                                          </tr>
-                                                                          <tr>
-                                                                            <td>
-                                                                              <div class="form-check form-check-flat mt-0">
-                                                                                <label class="form-check-label">
-                                                                                <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i><i class="input-helper"></i><i class="input-helper"></i></label>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div class="d-flex">
-                                                                                <img src="static/images/faces/face3.jpg" alt="">
-                                                                                <div>
-                                                                                  <h6>Wayne Murphy</h6>
-                                                                                  <p>Head admin</p>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <h6>Company name 1</h6>
-                                                                              <p>company type</p>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div>
-                                                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                  <p class="text-success">65%</p>
-                                                                                  <p>85/162</p>
-                                                                                </div>
-                                                                                <div class="progress progress-md">
-                                                                                  <div class="progress-bar bg-warning" role="progressbar" style="width: 38%" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td><div class="badge badge-opacity-warning">In progress</div></td>
-                                                                          </tr>
-                                                                          <tr>
-                                                                            <td>
-                                                                              <div class="form-check form-check-flat mt-0">
-                                                                                <label class="form-check-label">
-                                                                                <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i><i class="input-helper"></i><i class="input-helper"></i></label>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div class="d-flex">
-                                                                                <img src="static/images/faces/face4.jpg" alt="">
-                                                                                <div>
-                                                                                  <h6>Matthew Bailey</h6>
-                                                                                  <p>Head admin</p>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <h6>Company name 1</h6>
-                                                                              <p>company type</p>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div>
-                                                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                  <p class="text-success">65%</p>
-                                                                                  <p>85/162</p>
-                                                                                </div>
-                                                                                <div class="progress progress-md">
-                                                                                  <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td><div class="badge badge-opacity-danger">Pending</div></td>
-                                                                          </tr>
-                                                                          <tr>
-                                                                            <td>
-                                                                              <div class="form-check form-check-flat mt-0">
-                                                                                <label class="form-check-label">
-                                                                                <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i><i class="input-helper"></i><i class="input-helper"></i></label>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div class="d-flex">
-                                                                                <img src="static/images/faces/face5.jpg" alt="">
-                                                                                <div>
-                                                                                  <h6>Katherine Butler</h6>
-                                                                                  <p>Head admin</p>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td>
-                                                                              <h6>Company name 1</h6>
-                                                                              <p>company type</p>
-                                                                            </td>
-                                                                            <td>
-                                                                              <div>
-                                                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                  <p class="text-success">65%</p>
-                                                                                  <p>85/162</p>
-                                                                                </div>
-                                                                                <div class="progress progress-md">
-                                                                                  <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                                </div>
-                                                                              </div>
-                                                                            </td>
-                                                                            <td><div class="badge badge-opacity-success">Completed</div></td>
-                                                                          </tr>
-                                                                        </tbody>
-                                                                      </table>
-                                                                    </div>
-                                                                  </div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div> -->
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -733,11 +504,6 @@
                     </div>
                     <!-- content-wrapper ends -->
                     <!-- partial:partials/_footer.html -->
-                    <footer class="footer">
-                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
-                        </div>
-                    </footer>
                     <!-- partial -->
                 </div>
                 <!-- main-panel ends -->
@@ -767,12 +533,16 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
 		// const responsive = true
+		const dateShort = {{data.dates |safe}}.slice(-720)
 		const labels = {{data.dates |safe}};
 		var graphGradient2 = document.getElementById("aiGraph").getContext('2d');
 
 		var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
 		saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
     saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
+
+        let historicalDataShort = {{ data.historical_data }}.slice(-540)
+		let predictedDataShort = {{ data.predicted_data }}.slice(-720)
 
 		const data = {
 			labels: labels,
@@ -788,6 +558,36 @@
 				borderColor: 'rgb(50,205,50)',
 				// fill: false,
 				data: {{ data.predicted_data }},
+				// label: '# of Votes',
+				// data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
+				backgroundColor: saleGradientBg2,
+				// borderColor: [
+				// 		'#52CDFF',
+				// ],
+				// borderWidth: 1.5,
+				// fill: true, // 3: no fill
+				// pointBorderWidth: 1,
+				// pointRadius: [0, 0, 0, 4, 0],
+				// pointHoverRadius: [0, 0, 0, 2, 0],
+				// pointBackgroundColor: ['#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)'],
+				// pointBorderColor: ['#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437',],
+			}]
+		};
+
+		const dataShort = {
+			labels: dateShort,
+			datasets: [{
+				label: 'Historical Price',
+				backgroundColor: 'rgb(255, 99, 132)',
+				borderColor: 'rgb(255, 99, 132)',
+				fill: false,
+				data: predictedDataShort,
+			},{
+				label: 'Predicted Price',
+				// backgroundColor: 'rgb(50,205,50)',
+				borderColor: 'rgb(50,205,50)',
+				// fill: false,
+				data: historicalDataShort,
 				// label: '# of Votes',
 				// data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
 				backgroundColor: saleGradientBg2,
@@ -821,12 +621,22 @@
 			},
 		};
 
-
-
-
-
-
-
+        const configShort = {
+			type: 'line',
+			data: dataShort,
+			options: {
+				responsive: true,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Chart.js Line Chart'
+					}
+				}
+			},
+		};
 
         </script>
         <script>
@@ -835,8 +645,16 @@
 			config
 		);
 
-
-
+		function changeGraph() {
+			var checkBox = document.getElementById("myCheck");
+			if (checkBox.checked == true){
+				myChart.data = dataShort;
+				myChart.update();
+			} else {
+				myChart.data = data;
+				myChart.update();
+			}
+		}
 
         </script>
 
