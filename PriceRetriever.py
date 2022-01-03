@@ -1,6 +1,5 @@
 from requests import Request, Session
 import json
-import config
 import math
 
 global url
