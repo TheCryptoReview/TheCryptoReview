@@ -639,7 +639,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script>
 		// const responsive = true
-		const labels = {{data.dates |safe}};
+		const labels = '{{data.dates |safe}}';
 		var graphGradient2 = document.getElementById("aiGraph").getContext('2d');
 
 		var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
@@ -653,26 +653,13 @@
 				backgroundColor: 'rgb(255, 99, 132)',
 				borderColor: 'rgb(255, 99, 132)',
 				fill: false,
-				data: {{ data.historical_data }},
+				data: '{{ data.historical_data }}',
 			},{
 				label: 'Predicted Price',
 				// backgroundColor: 'rgb(50,205,50)',
 				borderColor: 'rgb(50,205,50)',
-				// fill: false,
-				data: {{ data.predicted_data }},
-				// label: '# of Votes',
-				// data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
+				data: '{{ data.predicted_data }}',
 				backgroundColor: saleGradientBg2,
-				// borderColor: [
-				// 		'#52CDFF',
-				// ],
-				// borderWidth: 1.5,
-				// fill: true, // 3: no fill
-				// pointBorderWidth: 1,
-				// pointRadius: [0, 0, 0, 4, 0],
-				// pointHoverRadius: [0, 0, 0, 2, 0],
-				// pointBackgroundColor: ['#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)'],
-				// pointBorderColor: ['#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437',],
 			}]
 		};
 
@@ -709,10 +696,6 @@
             }
         }
 
-        function retrieveData(){
-            console.log({{ name }})
-        }
-
 
 
     </script>
@@ -720,6 +703,6 @@
     <script src="static/js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->
 
-
+</div>
 </body>
 </html>
