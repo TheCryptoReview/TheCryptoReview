@@ -60,8 +60,8 @@ def predictCrypto(ticker, daysToPredict=180):
         return None, None, None, None
 
 
-x_real, y_real, x_predicted, y_predicted = predictCrypto("IOTX", 180)
-print(x_real)
-print(y_real)
-print(x_predicted)
-print(y_predicted)
+# x_real, y_real, x_predicted, y_predicted = predictCrypto("IOTX", 180)
+# print(x_real)
+# print(y_real)
+# print(x_predicted)
+# print(y_predicted)
