@@ -26,10 +26,16 @@
 @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
 
 
+
+
+
     </style>
     <link rel="stylesheet" href="https://static.cryptohopper.com/widgets/assets/public/css/style.css">
     <style type="text/css">/* Chart.js */
 @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+
+
+
 
 
     </style>
@@ -309,7 +315,7 @@
             </div>
             <iframe src="https://widget.coinlib.io/widget?type=full_v2&theme=dark&cnt=100&pref_coin_id=1505&graph=yes"
                     style="min-height: 1516px; border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1"
-                    marginheight="0px" marginwidth="0px" height="1211px" width="290px" allowfullscreen></iframe>
+                    marginheight="0px" marginwidth="0px" height="1211px" width="320px" allowfullscreen></iframe>
         </nav>
         <!-- partial -->
         <div class="main-panel">
@@ -318,10 +324,10 @@
                     <div class="col-sm-12">
                         <div class="home-tab">
                             <div class="d-sm-flex align-items-center justify-content-between border-bottom">
-                                <h1 style="color:white" id="coinTitle">{{ data.coin_name }} ({{ data.coin_ticker }})</h1>
-                                <button style='background: #232943;border: none; display: flex;' type="button"
-                                        class="btn btn-info btn-rounded btn-icon" onclick="retrieveData()">
-                                    <i class="ti-star"></i>
+                                <h1 style="color:white" id="coinTitle">{{ data.coin_name }} ({{ data.coin_ticker
+                                    }})</h1>
+                                <button type="button" class="btn btn-info btn-rounded btn-icon" onclick="saveCryptoCoin()">
+                                    <i class="ti-star">Click to Star/Unstar</i>
                                 </button>
                             </div>
                             <div class="tab-content tab-content-basic">
@@ -370,8 +376,6 @@
                                                                 <h5 class="card-subtitle card-subtitle-dash">Interact
                                                                     with the AI model's predictions for the possible
                                                                     future prices of {{ data.coin_ticker }}</h5>
-								   <label for="myCheck">Shorten Data:</label> 
-								<input type="checkbox" id="myCheck" onclick="changeGraph()" checked>
                                                             </div>
                                                             <div>
                                                                 <canvas id="aiGraph"></canvas>
@@ -620,7 +624,7 @@
     <script src="static/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-<!--     <script src="static/vendors/chart.js/Chart.min.js"></script> -->
+    <!--     <script src="static/vendors/chart.js/Chart.min.js"></script> -->
     <script src="static/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <script src="static/vendors/progressbar.js/progressbar.min.js"></script>
 
@@ -635,17 +639,15 @@
     <!-- Custom js for this page-->
     <!-- <script src="static/js/dashboard.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<script>
+    <script>
 		// const responsive = true
-		const dateShort = {{data.dates |safe}}.slice(-720)
 		const labels = {{data.dates |safe}};
 		var graphGradient2 = document.getElementById("aiGraph").getContext('2d');
 
 		var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
 		saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
     saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
-		let historicalDataShort = {{ data.historical_data }}.slice(-540)
-		let predictedDataShort = {{ data.predicted_data }}.slice(-720)
+
 		const data = {
 			labels: labels,
 			datasets: [{
@@ -660,36 +662,6 @@
 				borderColor: 'rgb(50,205,50)',
 				// fill: false,
 				data: {{ data.predicted_data }},
-				// label: '# of Votes',
-				// data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
-				backgroundColor: saleGradientBg2,
-				// borderColor: [
-				// 		'#52CDFF',
-				// ],
-				// borderWidth: 1.5,
-				// fill: true, // 3: no fill
-				// pointBorderWidth: 1,
-				// pointRadius: [0, 0, 0, 4, 0],
-				// pointHoverRadius: [0, 0, 0, 2, 0],
-				// pointBackgroundColor: ['#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)'],
-				// pointBorderColor: ['#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437','#222437',],
-			}]
-		};
-
-		const dataShort = {
-			labels: dateShort,
-			datasets: [{
-				label: 'Historical Price',
-				backgroundColor: 'rgb(255, 99, 132)',
-				borderColor: 'rgb(255, 99, 132)',
-				fill: false,
-				data: predictedDataShort,
-			},{
-				label: 'Predicted Price',
-				// backgroundColor: 'rgb(50,205,50)',
-				borderColor: 'rgb(50,205,50)',
-				// fill: false,
-				data: historicalDataShort,
 				// label: '# of Votes',
 				// data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
 				backgroundColor: saleGradientBg2,
@@ -722,39 +694,19 @@
 				}
 			},
 		};
-		const configShort = {
-			type: 'line',
-			data: dataShort,
-			options: {
-				responsive: true,
-				plugins: {
-					legend: {
-						position: 'top',
-					},
-					title: {
-						display: true,
-						text: 'Chart.js Line Chart'
-					}
-				}
-			},
-		};
-	</script>
-	<script>
+
+
+
+    </script>
+    <script>
 		const myChart = new Chart(
 			document.getElementById('aiGraph'),
-			configShort
+			config
 		);
-		function changeGraph() {
-			var checkBox = document.getElementById("myCheck");
-			if (checkBox.checked == true){
-				myChart.data = dataShort;
-				myChart.update();
-			} else {
-				myChart.data = data;
-				myChart.update();
-			}
-		}
-	</script>
+
+
+
+    </script>
 
     <script type="text/javascript">
         function CheckBrowser(){
@@ -765,9 +717,46 @@
             }
         }
 
-        function retrieveData(){
-            console.log({{ name }})
+        function clearStorage(){
+            localStorage.clear();
         }
+
+        function saveCryptoCoin() {
+            console.log('{{ name }}');
+            coinName = '{{ name }}';
+            if (CheckBrowser()) {
+                let coinsSaved = JSON.parse(localStorage.getItem('coinList'));
+                console.log(coinsSaved);
+                if (coinsSaved != null) {
+                    console.log("CoinsSaved is not null");
+                    console.log(typeof coinsSaved);
+                    if (coinsSaved.length >= 5) {
+                        if (!coinsSaved.includes(coinName)) {
+                            coinsSaved[4] = coinName;
+                            console.log("coins saved: " + coinsSaved);
+                            localStorage.setItem("coinList", JSON.stringify(coinsSaved));
+                        }
+                    }
+                    else {
+                        if (!coinsSaved.includes(coinName)) {
+                            coinsSaved.push(coinName);
+                            console.log("coins saved: " + coinsSaved);
+                            localStorage.setItem("coinList", JSON.stringify(coinsSaved));
+                        }
+                    }
+                }
+                else {
+                    console.log("CoinsSaved is null");
+                    const coinList = [coinName];
+                    console.log("coins saved: " + coinList);
+                    localStorage.setItem("coinList", JSON.stringify(coinList));
+                }
+            }
+            else {
+                alert("Your browser does not support the latest HTML version. Please update and try again.");
+            }
+        }
+
 
 
 
