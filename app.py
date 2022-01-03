@@ -54,6 +54,12 @@ def dashboard():
     name, symbol, price, pchange_1h, pchange_24h, pchange_7d, pchange_30d, pchange_60d, pchange_90d, market_cap = getCryptoData("BTC")
     x_real, y_real, x_predicted, y_predicted = predictCrypto(symbol, daysToPredict=180)
 
+    confidence = 0
+    preLast = y_predicted[len(y_predicted)-1]
+    realLast = y_real[len(y_real)-1]
+    confidence = (1-((realLast-preLast)/realLast))*50
+    confidence = round(confidence,1)
+
 
     price = roundCrypto(price)
     pchange_1h = roundCryptoWithoutDollar(pchange_1h)
