@@ -1,5 +1,7 @@
 # The Crypto Review
 
+**Due to the constraints of our free Heroku server, our website dashboard may not run on Heroku, please refer to the video or download the run the app locally for a demonstration. The Crypto Review team is very sorry for the inconvenience
+
 ## Introduction
 Welcome to our project, TheCryptoReview, created for the STEM Warriors Hackathon! For easy access, check out our site publicly hosted on Heroku here: https://the-crypto-review.herokuapp.com/index.html. To view our website locally, download the repository, then run pip install -r requirements.txt, and finally run the app.py file. For more information on how our project works, check out our YouTube video describing it linked here: https://youtu.be/-nMBC2CprGU.
 
